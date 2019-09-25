@@ -1,0 +1,6 @@
+/home/devone/Documents/Godot Projects/CSharp/Rockoban/Rockoban/.mono/temp/bin/Tools/Rockoban.dll
+/home/devone/Documents/Godot Projects/CSharp/Rockoban/Rockoban/.mono/temp/bin/Tools/Rockoban.pdb
+/home/devone/Documents/Godot Projects/CSharp/Rockoban/Rockoban/.mono/temp/obj/Tools/Rockoban.csprojAssemblyReference.cache
+/home/devone/Documents/Godot Projects/CSharp/Rockoban/Rockoban/.mono/temp/obj/Tools/Rockoban.csproj.CoreCompileInputs.cache
+/home/devone/Documents/Godot Projects/CSharp/Rockoban/Rockoban/.mono/temp/obj/Tools/Rockoban.dll
+/home/devone/Documents/Godot Projects/CSharp/Rockoban/Rockoban/.mono/temp/obj/Tools/Rockoban.pdb

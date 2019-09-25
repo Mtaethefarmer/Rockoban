@@ -19,6 +19,10 @@ config/name="Rockoban"
 run/main_scene="res://Prefab/World.tscn"
 config/icon="res://Asset/Art/icon.png"
 
+[autoload]
+
+GlobalEvents="*res://Script/GlobalEvents.gd"
+
 [rendering]
 
 environment/default_environment="res://Resource/default_env.tres"
