@@ -6,6 +6,7 @@
 [node name="World" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+Speed = 250
 
 [node name="UI" parent="." instance=ExtResource( 2 )]
 margin_left = 1.58667
