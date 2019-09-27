@@ -1,0 +1,15 @@
+DAY 3[Good]
+
+Goal: Have 2 players move on screen. [Complete]
+
+I feel good about getting two players moving on screen, this demonstrates the ability to use the controller to play a co-op game.
+
+[Improvements]
+- Having two controllers ready would be nice. I had to quickly search for another controller that would work on my machine in the middle of the sprint which ate up some of my time. Time which I am now realizing is precious since there is so little of it.
+- I should probably have each player be instanced when a controller is detected to reduced the amount of copy/paste coding going around. I suspect the more I add to the player script the more it will have to apply to both players causing me to copy/paste shenanigans.
+- Player One has priority over Player Two in both physics and input operations. Separating/Generalizing the code player code should help with this. But I do not think it'll will be an issue since the game idea does not require any special physics occurrences.
+
+[Positive Note]
+- I got 2 friends to play-test the game. Feedback was "Well, it functions." and that was my goal for today so its a win in my book.
+
+[Next Goal]Grid-based movement...

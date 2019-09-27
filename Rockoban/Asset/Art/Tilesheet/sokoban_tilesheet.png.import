@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/playerFace_dark.png-2a43e397ab85b606106fd7bfe4b7475c.stex"
+path="res://.import/sokoban_tilesheet.png-6beb174200262165ac4973c7b27b7f39.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/Art/Player/playerFace_dark.png"
-dest_files=[ "res://.import/playerFace_dark.png-2a43e397ab85b606106fd7bfe4b7475c.stex" ]
+source_file="res://Asset/Art/Tilesheet/sokoban_tilesheet.png"
+dest_files=[ "res://.import/sokoban_tilesheet.png-6beb174200262165ac4973c7b27b7f39.stex" ]
 
 [params]
 

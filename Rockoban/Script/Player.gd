@@ -1,4 +1,4 @@
-extends Node2D
+extends "Pawn.gd"
 ################################################################################
 #@file   Player.gd
 #@author Devone Reynolds

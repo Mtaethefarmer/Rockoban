@@ -23,6 +23,10 @@ config/icon="res://Asset/Art/icon.png"
 
 GlobalEvents="*res://Script/GlobalEvents.gd"
 
+[display]
+
+window/size/height=576
+
 [input]
 
 PlayerOneMoveLeft={
