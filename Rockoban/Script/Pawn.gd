@@ -14,9 +14,9 @@ extends Node2D
 #				be changed the editor
 #
 ################################################################################
-enum TileType{INVALID = -1, OPEN, PLAYER, WALL}
+enum TileType{PLAYER = -2 , OPEN, WALL, BOX, HOLE}
 #warning-ignore:unused_class_variable
-export(TileType) var Type = TileType.INVALID
+export(TileType) var Type = TileType.OPEN
 ################################################################################
 #@class	Pawn
 #@brief

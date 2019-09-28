@@ -32,10 +32,14 @@ func _ready():
 		print(name + " encountered error code: " + String(err))
 
 func _physics_process(delta):
-	P1GetInput()
-	P2GetInput()
-	$P1KinematicBody2D.move_and_collide(p1velocity * delta)
-	$P2KinematicBody2D.move_and_collide(p2velocity*delta)
+	var rename_var = get_parent().RequestMove(self, P1GetInput())
+
+	if rename_var:
+		position = rename_var
+
+	#P2GetInput()
+	#$P1KinematicBody2D.move_and_collide(p1velocity * delta)
+	#$P2KinematicBody2D.move_and_collide(p2velocity*delta)
 
 ################################################################################
 #@brief
@@ -54,7 +58,8 @@ func P1GetInput():
 	if Input.is_action_pressed("PlayerOneMoveDown"):
 		direction += Vector2.DOWN
 
-	p1velocity = direction.normalized() * Speed
+	return direction
+	#p1velocity = direction.normalized() * Speed
 
 ################################################################################
 #@brief
