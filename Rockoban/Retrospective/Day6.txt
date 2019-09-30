@@ -1,0 +1,38 @@
+Day 006[Great]
+
+Goal: Grid-based movement [Complete]
+
+Both players now move independantly of each other, even thou I couldn't
+showcase it. Started animating the players movement and bumping into 
+stuff also. Went into 15 minute overtime to solve my bug, unforunately.
+
+[Improvements]
+- Gotta be careful about the nodes I am editing, I caused my to think there
+    was a bug in my code. I animated the Node2D position instead of the 
+    Sprite.
+- Same from Day 3
+    Another day working only with one controller. I was too late to check one
+     out from the library, but I should just bring one from home and leave it
+     with my other one.
+
+- Same from Day 5.
+    Getting working code is good but I am left at the end to comment my code. 
+
+- I should ask my friends who watch me, for more advice or include them in
+    project somehow. I did not notice that one of them had joined so I never
+    took the time to say hi. D:
+
+
+[Positive Note]
+- Breaking down the tasks into smaller bits really helps me stay focused on one
+    thing at a time. Before the stream I wrote down 5 things that I wanted to 
+    get done for this stream and was only able to complete the first 3 tasks.
+
+- Same from Day 5.
+    One of my friends and family came by to say hi, made me feel supported
+    and not alone. Thanks, fam!
+
+- I felt good to be ready and streaming 5 minutes prior to my initial 
+    start-time, I even had a second controller ready.
+
+[Next Goal]Animate the Player(s)...
