@@ -1,0 +1,37 @@
+**Day 007[Good]**
+
+**Goal: Animate the Player(s) [Complete]**
+
+Both players have a walk animation when moing around the world. I enjoy that 
+there is a walk sound effect that each of them make when moving around the 
+board also. 
+
+**[Improvements]**
+- AudioStreamPlayers changed since the last time I used one. I thought it would
+    work similar to the AnimationPlayer and let me load multiple sounds but not
+    the case. 
+
+- Celebrations are good but I still got to focus to making a game. This sprint 
+    felt like a way to celebrate Day 7 but I felt like I could have used my
+    time more wisely to get the next main mechanic in the game.
+
+- I should showcase the each of the badges on my stream when I get it, cuz
+    I'm proud of them.
+
+- I want to make my stream more interesting for others to watch. Maybe I'll add
+    some smooth music in the background. or Rewatch one of my streams to do more
+    self critquing. 
+    
+
+**[Positive Note]**
+- *Same from Day 6*
+    Breaking down the tasks into smaller bits really helps me stay focused on one
+    thing at a time. This time I wrote down some solutions for how to animate the 
+    players and decided while streaming which one I wanted to implement.
+
+- So far a different person everyday has come by to say hi. This time I was able to
+    respond to the message within a few minutes. I wonder if restream plays a sound
+    to notify streamers of the chat.
+
+
+**[Next Goal]Push the Crates into the Hole...**

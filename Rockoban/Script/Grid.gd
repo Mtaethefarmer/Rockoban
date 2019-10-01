@@ -22,8 +22,8 @@ func RequestMove(pawn, direction):
 	match get_cellv(target):
 		TileType.OPEN:
 			return UpdatePawnPosition(pawn, start, target)
-		TileType.PLAYER:
-			return UpdatePawnPosition(pawn, start, target)
+#		TileType.PLAYER:
+#			return UpdatePawnPosition(pawn, start, target)
 
 func UpdatePawnPosition(pawn, start, target):
 		set_cellv(target, pawn.Type)
