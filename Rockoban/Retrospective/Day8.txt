@@ -1,0 +1,36 @@
+**Day 008[Great]**
+
+**Goal: Push the Crates into the Hole [Incomplete]**
+
+Both players can push crates independently. Right now they just snap into place
+but later I will add some smooth transitions for them. Almost lost faith in the
+sudo-code that I wrote but it still worked as planned. ...Or as well as game 
+development plans go. 
+
+**[Improvements]**
+- Do not overuse global events when, local one can work just fine. I tried
+    solving a problem using Global Events and that caused each instanced crate
+    to move when 1 signal was emitted.
+
+- To reiterate the importance of not over-using Global Events, it also caused
+    a recursion bug which could have locked up my computer. Instead, it 
+    overloaded the print stream/debugger, so I know I got lucky.
+
+- There was a lot of noise when I first started streaming, maybe I should ask 
+    the people around to lower their voices, so that I can also.
+
+- I should investigate why OBS is taking my mouse input the wrong way. It is 
+    causing my mouse to snap to panel/window why OBS is on screen. This did
+    cost me some time when I was initially ready to stream.
+    
+
+**[Positive Note]**
+- Showed off the 7 Day Badge! 
+
+- I am getting better about responding to messages on ReStream, I think that
+    was because I had more people and my parents watching me stream. Happy to 
+    have the support from so many people, thou.
+
+
+**[Next Goal]Push the Crates into the Hole...**
+
