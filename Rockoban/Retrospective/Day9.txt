@@ -1,0 +1,29 @@
+**Day 009[Good]**
+
+**Goal: Push the Crates into the Hole [Complete]**
+
+Crates will fall into holes, opening up path new pathways for both players. 
+
+**[Improvements]**
+- I should investigate a bug where signals for crates moving are being fired 
+    off six times or more everytime the player pushes the crate.
+
+- I should spend more time describing the design of the game. I am starting to
+    have more ideas about how people will play this game, writing down those 
+    ideas and pitching them to others should make my gameplay stronger.
+
+- Having an intro and outro would be a nice way to let people know what my 
+    entire plan for this challenge is.
+    
+
+**[Positive Note]**
+- I had a few minutes after I accomplished my goal and I used it to comment
+    the Crate script. More documentation equals and easier time navigating the
+    logic.
+
+- Wraithan assisted me this stream as a rubber ducky and pro bug solver. It was
+    nice to know someone had my back. I am going to pay attention to his stream
+    becauase he seems very knowlegdable, I could learn a thing or two.
+
+
+**[Next Goal]Have Players Win the Game...**

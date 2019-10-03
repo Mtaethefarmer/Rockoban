@@ -1,5 +1,7 @@
 extends TileMap
 
+#Positions swapped between global and grid positions
+
 enum TileType{PLAYER = -2 , OPEN, WALL, CRATE, HOLE}
 
 func _ready():
@@ -11,15 +13,20 @@ func GetPawnCellPosition(position):
 	for child in get_children():
 		if child.position == position:
 			return world_to_map(position)
-		else:
-			print("Could not find cell @ position: " + String(position))
+#		else:
+#			print("Could not find cell @ position: " + String(position))
 
 func GetPawn(grid_position):
 	for child in get_children():
 		if GetPawnCellPosition(child.position) == grid_position:
 			return child
-		else:
-			print("Could not find pawn @ positon: " + String(position))
+#		else:
+#			print("Could not find pawn @ positon: " + String(position))
+
+func RemovePawn(pawn):
+	var cell_position = world_to_map(pawn.position)
+	set_cellv(cell_position, TileType.OPEN)
+	pawn.queue_free()
 
 func RequestMove(pawn, direction):
 	#Both are in grid coords
@@ -34,6 +41,11 @@ func RequestMove(pawn, direction):
 		TileType.CRATE:
 			var crate = GetPawn(target)
 			crate.emit_signal("CrateMove", direction)
+		TileType.HOLE:
+			if pawn.Type == TileType.CRATE:
+				var hole = GetPawn(target)
+				pawn.emit_signal("CrateSink", hole)
+				set_cellv(target, TileType.OPEN)
 
 func UpdatePawnPosition(pawn, start, target):
 		set_cellv(target, pawn.Type)
