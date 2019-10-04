@@ -1,5 +1,6 @@
 extends "Pawn.gd"
 
+#warning-ignore:unused_signal
 signal CrateOnHole
 
 func _ready():
