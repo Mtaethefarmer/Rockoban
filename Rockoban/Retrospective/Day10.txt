@@ -1,0 +1,32 @@
+**Day 010[Good]**
+
+**Goal: Have Players Win the Game[Incomplete]**
+
+When the players touch each other, they cause the 'You Win' screen to appear.
+Going forward when this happens 3 seperate tiles will allow the players to 
+continue to the next level, restart the level or quit. 
+
+**[Improvements]**
+- I couldn't help myself going over the time limit. I was excited to implement
+    the 'You Win' menu as part of the game mechanics. Similar to fighting games
+    players will get to vote on which option they would like to choose by
+    walking over the tiles.
+
+- *Same as Day 9*
+    I was not prepared to implement the 'You Win' screen at the beginning of 
+    the streaming session. Clearly, I should be spending more time on the 
+    design as development continues. So that I have a stronger idea of what I
+    should be working on.
+
+- I should reflect on the whole week during the weekend, so that I can address
+    some of the other Improvements that I miss during the week.
+    
+**[Positive Note]**
+- Today would have been a Great Day if I was able to keep to the time limit.
+    Alas, I was still excited to come up with a creative idea.
+
+- Now I have a checklist of the routine used while taking on this challenge.
+    This will keep me more organized for the long run when things get busy
+    at school. 
+
+**[Next Goal]Have Players Win the Game...**

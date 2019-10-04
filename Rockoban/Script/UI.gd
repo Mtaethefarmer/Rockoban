@@ -22,6 +22,9 @@ extends Control
 #
 ################################################################################
 func _ready():
+
+	$Panel.visible = false
+
 	#Listen for any controllers that connect to the game
 	var err = GlobalEvents.connect("PlayerControllerConnected", self, "OnPlayerControllerConnected")
 	if(err):
@@ -32,6 +35,9 @@ func _ready():
 	if(err):
 		print(name + " encountered error code: " + String(err))
 
+	err = GlobalEvents.connect("YouWin", self, "OnYouWin")
+	if(err):
+		print(name + " encountered error code: " + String(err))
 ################################################################################
 #@brief
 #		Play an animation when the controller is connected
@@ -53,3 +59,9 @@ func OnPlayerControllerConnected(id):
 func OnPlayerControllerDisconnected(id):
 	$ConnectedController.text = "Controller " + String(id) + " disconnected."
 	$AnimationPlayer.play("ConnectedControllerFall")
+
+func OnYouWin():
+	$Panel.visible = true
+	if not GlobalEvents.isWinner:
+		GlobalEvents.isWinner = true
+		$AnimationPlayer.play("FadeIn")

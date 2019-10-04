@@ -26,6 +26,10 @@ extends Node
 signal PlayerControllerConnected(id)
 #warning-ignore:unused_signal
 signal PlayerControllerDisconneted(id)
+#warning-ignore:unused_signal
+signal YouWin()
+#warning-ignore:unused_class_variable
+var isWinner = false
 
 
 # Called when the node enters the scene tree for the first time.
