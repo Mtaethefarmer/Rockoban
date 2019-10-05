@@ -14,7 +14,7 @@ extends Node2D
 #				be changed the editor
 #
 ################################################################################
-enum TileType{PLAYER = -2 , OPEN, WALL, CRATE, HOLE, WIN, RESTART, LOSE}
+enum TileType{PLAYER = -2 , OPEN, WALL, CRATE, HOLE, CONTINUE, LEVEL_SELECT, QUIT, MAIN_MENU}
 #warning-ignore:unused_class_variable
 export(TileType) var Type = TileType.OPEN
 ################################################################################
