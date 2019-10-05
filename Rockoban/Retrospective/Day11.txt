@@ -1,0 +1,35 @@
+**Day 010[MEH]**
+
+**Goal: Have Players Win the Game[Complete]**
+
+The User Interface is now integrated into the game as a mechanic. Menu options
+will show up as tiles that each player can walk on to confirm selections. At first, I wanted different levels of confirmation for each one but that turned out to be too complicated.
+
+**[Improvements]**
+- I want to recognize faster when I am trying to do something more complex than 
+    it needs to be. I spend 30 or so minutes trying to get different levels of 
+    confirmation for each menu option instead of implementing the easier 
+    option. The trouble I have is wanting a system that is less
+    prone to errors in the future and having something to show at the end of
+    the session.
+
+- As I set up for the session, I ponder what can be done to let others know 
+    about the 100 Days of Game Dev Challenge and what I am doing for it. 
+    Just as a note for myself here are some of those things:
+        ~ Updating the page for each streaming platform to look more
+            professional
+        ~ Intro/Outro Sequence
+        ~ Asking my friends in person, if they would subscribe/follow my
+            streams, twitter or other social media platforms
+        ~ Adding a timer on the stream to let people who tune in early when
+            the stream is starting
+        ~ Do a recap video of some of the interesting parts from the last few 
+            days, this is a devlog I believe
+    
+**[Positive Note]**
+- I may have found a new spot to stream, which is quieter and has walls to help     me concentrate without the background noise.
+
+- I drew some designs for the User Interface in my notes journal. The more          design wrote I do the better I feel about the direction I am going with the     game.
+
+**[Next Goal]Have Players go to the Main Menu...**
+

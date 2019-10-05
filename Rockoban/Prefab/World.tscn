@@ -5,9 +5,9 @@
 [ext_resource path="res://Prefab/Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Prefab/Object/Crate.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Prefab/Object/Hole.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Prefab/Object/WinTile.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Prefab/Object/RestartTile.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Prefab/Object/QuitTile.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Prefab/Object/ContinueTile.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Prefab/Object/LevelSelectTile.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Prefab/Object/MainMenuTile.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Prefab/UI/UI.tscn" type="PackedScene" id=9]
 
 [sub_resource type="TileSet" id=1]
@@ -53,11 +53,13 @@ script = ExtResource( 2 )
 [node name="Player1" parent="Grid" instance=ExtResource( 3 )]
 modulate = Color( 0.0431373, 1, 0.0784314, 1 )
 position = Vector2( 232.638, 224 )
+z_index = 2
 Type = -2
 
 [node name="Player2" parent="Grid" instance=ExtResource( 3 )]
 modulate = Color( 0, 0.101961, 1, 1 )
 position = Vector2( 832, 352 )
+z_index = 2
 Type = -2
 Id = 1
 
@@ -75,14 +77,17 @@ position = Vector2( 928, 96 )
 [node name="Hole3" parent="Grid" instance=ExtResource( 5 )]
 position = Vector2( 672, 352 )
 
-[node name="WinTile" parent="Grid" instance=ExtResource( 6 )]
+[node name="ContinueTile" parent="Grid" instance=ExtResource( 6 )]
 position = Vector2( 384, 352 )
+Type = 3
 
-[node name="RestartTile" parent="Grid" instance=ExtResource( 7 )]
+[node name="LevelSelectTile" parent="Grid" instance=ExtResource( 7 )]
 position = Vector2( 512, 352 )
+Type = 4
 
-[node name="QuitTile" parent="Grid" instance=ExtResource( 8 )]
+[node name="MainMenuTile" parent="Grid" instance=ExtResource( 8 )]
 position = Vector2( 640, 352 )
+Type = 6
 
 [node name="UI" parent="." instance=ExtResource( 9 )]
 margin_top = 1.58667

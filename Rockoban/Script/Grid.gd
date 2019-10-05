@@ -2,7 +2,7 @@ extends TileMap
 
 #Positions swapped between global and grid positions
 
-enum TileType{PLAYER = -2 , OPEN, WALL, CRATE, HOLE, WIN, RESTART, LOSE}
+enum TileType{PLAYER = -2 , OPEN, WALL, CRATE, HOLE, CONTINUE, LEVEL_SELECT, QUIT, MAIN_MENU}
 
 func _ready():
 	for child in get_children():
@@ -23,6 +23,16 @@ func GetPawn(grid_position):
 #		else:
 #			print("Could not find pawn @ positon: " + String(position))
 
+func GrowPawn(position, direction, type):
+	var start = world_to_map(position)
+	var target = start + direction
+
+	if get_cellv(target) == TileType.OPEN:
+		set_cellv(target, type)
+	else:
+		print("Cannot grow tile, not an open tile. " + String(get_cellv(target)) + " exsists @: " + String(target))
+
+
 func RemovePawn(pawn):
 	var cell_position = world_to_map(pawn.position)
 	set_cellv(cell_position, TileType.OPEN)
@@ -35,6 +45,15 @@ func RequestMove(pawn, direction):
 
 	match get_cellv(target):
 		TileType.OPEN:
+			return UpdatePawnPosition(pawn, start, target)
+		TileType.CONTINUE:
+			print("Player has chosen to continue...")
+			return UpdatePawnPosition(pawn, start, target)
+		TileType.LEVEL_SELECT:
+			print("Player has chosen to select another level...")
+			return UpdatePawnPosition(pawn, start, target)
+		TileType.MAIN_MENU:
+			print("Player has chosen to go to the main menu...")
 			return UpdatePawnPosition(pawn, start, target)
 		TileType.PLAYER:
 			if pawn.Type == TileType.PLAYER:
