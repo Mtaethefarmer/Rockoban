@@ -1,0 +1,28 @@
+**Day 012[GOOD]**
+
+**Goal: Have Players go to the Main Menu[Incomplete]**
+
+To get started on getting the Players to the Main Menu, I had to instance the players and Menu buttons using code. This will allow me to load them back in
+the game when at the Main Menu. The same technique will be used to load the buttons for the Main Menu and every other level need in the game.
+
+**[Improvements]**
+- I should move the TileType Enum to the globals script. Right now I have 3 
+    sets of code that need to have the same enum types which (I can see now
+    looking into the future) I will forget to update all of them when I add 
+    a new type of tile.
+
+- After writing the AddPawn() for Grid, a bug appeared where new objects cannot     be placed on top of each other. Instead, they are not placed and it leaves      an open tile where it would go. I should clear the board before trying to       set down new menu tiles to avert this bug.
+
+- *Same as Day 11*
+    Since I did not stream over the weekend I did not take the time to complete
+    marketing/social tasks that I think would aid the streaming experience for 
+    others who watch.
+    Other ones to add:
+    ~ Playing some music in the background to help drown out the ambient noise
+        that come from the other students around getting work done.
+    ~ Asking the people who do tune in what would make them stay longer and         watch to get ideas of what I should be doing.
+    
+**[Positive Note]**
+- After that streaming session, 10+ new people were logged as visiting my            Facebook page that I set up for the stream. 
+
+**[Next Goal]Have Players go to the Main Menu...**

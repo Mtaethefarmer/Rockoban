@@ -12,6 +12,7 @@ font_data = ExtResource( 3 )
 z_index = 1
 z_as_relative = false
 script = ExtResource( 1 )
+Type = 3
 
 [node name="Texture" type="Sprite" parent="."]
 position = Vector2( -9.53674e-07, 2.38419e-07 )

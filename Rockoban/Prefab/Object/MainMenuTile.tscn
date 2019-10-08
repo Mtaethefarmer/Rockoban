@@ -12,6 +12,7 @@ font_data = ExtResource( 3 )
 z_index = 1
 z_as_relative = false
 script = ExtResource( 1 )
+Type = 6
 
 [node name="Texture" type="Sprite" parent="."]
 scale = Vector2( 0.673684, 1.30612 )

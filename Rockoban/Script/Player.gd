@@ -16,7 +16,7 @@ extends "Pawn.gd"
 #        				"https://github.com/godotengine/godot/pull/26071"S
 #
 ################################################################################
-enum PlayerID{ONE, TWO};
+enum PlayerID{ONE = 1, TWO};
 export(PlayerID) var Id = 1;
 var direction
 var animationName = "walk_down"

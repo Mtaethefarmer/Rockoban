@@ -32,7 +32,6 @@ func GrowPawn(position, direction, type):
 	else:
 		print("Cannot grow tile, not an open tile. " + String(get_cellv(target)) + " exsists @: " + String(target))
 
-
 func RemovePawn(pawn):
 	var cell_position = world_to_map(pawn.position)
 	set_cellv(cell_position, TileType.OPEN)
@@ -85,3 +84,13 @@ func UpdatePawnPosition(pawn, start, target):
 		set_cellv(target, pawn.Type)
 		set_cellv(start, TileType.OPEN)
 		return map_to_world(target) + (cell_size/2)
+
+func AddPawn(pawn, gridPosition, offset = Vector2.ZERO):
+	#Print error if grid position is occupied
+	if get_cellv(gridPosition) == TileType.OPEN:
+		#This assumes the pawn is already instanced and has a GridType
+		pawn.position = map_to_world(gridPosition) + offset
+		add_child(pawn)
+		set_cellv(gridPosition, pawn.Type)
+	else:
+		print("Could not place Pawn: [" + pawn.name + "] @ GridPos: " + String(gridPosition))
