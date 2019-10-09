@@ -38,6 +38,10 @@ func _ready():
 	err = GlobalEvents.connect("YouWin", self, "OnYouWin")
 	if(err):
 		print(name + " encountered error code: " + String(err))
+
+	err = GlobalEvents.connect("GoToMainMenu", self, "onGoToMainMenu")
+	if(err):
+		print(name + " encountered error code: " + String(err))
 ################################################################################
 #@brief
 #		Play an animation when the controller is connected
@@ -65,3 +69,7 @@ func OnYouWin():
 	if not GlobalEvents.isWinner:
 		GlobalEvents.isWinner = true
 		$AnimationPlayer.play("FadeIn")
+
+func onGoToMainMenu():
+	$Panel/Label.text = " Rockoban "
+	$Panel/Label.set_anchors_and_margins_preset(Control.PRESET_CENTER)

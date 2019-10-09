@@ -28,8 +28,14 @@ signal PlayerControllerConnected(id)
 signal PlayerControllerDisconneted(id)
 #warning-ignore:unused_signal
 signal YouWin()
+#warning-ignore:unused_signal
+signal GoToMainMenu()
+
 #warning-ignore:unused_class_variable
 var isWinner = false
+
+
+enum TileType{PLAYER = -2 , OPEN, WALL, CRATE, HOLE, CONTINUE, LEVEL_SELECT, QUIT, MAIN_MENU, START}
 
 
 # Called when the node enters the scene tree for the first time.
