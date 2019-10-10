@@ -30,6 +30,8 @@ signal PlayerControllerDisconneted(id)
 signal YouWin()
 #warning-ignore:unused_signal
 signal GoToMainMenu()
+#warning-ignore:unused_signal
+signal GoToLevel(level)
 
 #warning-ignore:unused_class_variable
 var isWinner = false

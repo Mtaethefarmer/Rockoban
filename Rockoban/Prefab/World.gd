@@ -18,6 +18,11 @@ func _ready():
 	if(err):
 		print(name + " encountered error code: " + String(err))
 
+	err = GlobalEvents.connect("GoToLevel", self, "onGoToLevel")
+
+	if(err):
+		print(name + " encountered error code: " + String(err))
+
 	AddPlayers()
 
 func AddPlayers():
@@ -50,3 +55,8 @@ func onYouWin():
 func onGoToMainMenu():
 	var instance = StartTile.instance()
 	$Grid.AddPawn(instance, Vector2(6,5), Vector2(0, $Grid.cell_size.y/2))
+
+func onGoToLevel(level):
+	var tiles = $JSONParser.CreateLevelFromJSON("res://Prefab/Level/Level00" + String(level) + ".json")
+	for tile in tiles:
+		$Grid.AddPawn(tile, Vector2(tile.GridPosition.x, tile.GridPosition.y), $Grid.cell_size/2)

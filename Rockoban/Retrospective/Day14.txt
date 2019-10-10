@@ -1,0 +1,30 @@
+**Day 014[MEH]**
+
+**Goal: Load Level One[Incomplete]**
+
+Levels are being read in from JSON files. After stepping on the StartTile the
+    game will load Level One. Now all that is left is to create an actual
+    puzzle for the players to solve.
+
+**[Improvements]**
+- I should do some bounds checking on placing tiles in the grid. Today, I had
+    an error with placing tiles. When I specified the position of the tile it 
+    would not appear on screen. It was due to me placing it outside of 
+    the grid space I was using 13 by 8. With bounds checking I will at least 
+    display a message letting me know when I do that in the future.
+
+- *Same as Day 4.*
+    I should treat the 1-hour time limit with more respect. I decided to go
+    over the specified time limit because I spent the first 30 minutes doing
+    research on how to read JSON files with Godot. 
+    
+**[Positive Note]**
+- My presence for this challenge is getting more attention. More and more 
+    people from my school recognize that I am streaming game development
+    as they pass by. 
+
+- I tuned into Pigdev's stream this morning and was delighted to see other 
+    users of Godot having conversations about signals and event management. 
+    
+**[Next Goal]Load Level One...**
+

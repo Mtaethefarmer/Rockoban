@@ -92,6 +92,8 @@ func RequestMove(pawn, direction):
 			return UpdatePawnPosition(pawn, start, target)
 		GlobalEvents.TileType.START:
 			print("Player has chosen to start the game...")
+			Clear()
+			GlobalEvents.emit_signal("GoToLevel", 1)
 			return UpdatePawnPosition(pawn, start, target)
 		GlobalEvents.TileType.MAIN_MENU:
 			Clear()

@@ -16,6 +16,8 @@ extends Node2D
 ################################################################################
 #warning-ignore:unused_class_variable
 export(GlobalEvents.TileType) var Type = GlobalEvents.TileType.OPEN
+#warning-ignore:unused_class_variable
+var GridPosition = Vector2()
 ################################################################################
 #@class	Pawn
 #@brief

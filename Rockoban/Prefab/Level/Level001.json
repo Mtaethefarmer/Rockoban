@@ -1,0 +1,18 @@
+{
+    "Tile1": 
+    {
+        "name": "Crate",
+        "path": "res://Prefab/Object/Crate.tscn",
+        "type": 1,
+        "X": 3,
+        "Y": 3
+    },
+    "Tile2": 
+    {
+        "name": "Crate2",
+        "path": "res://Prefab/Object/Crate.tscn",
+        "type": 1,
+        "X": 10,
+        "Y": 7
+    }
+}
