@@ -1,0 +1,31 @@
+**Day 015[BAD]**
+
+**Goal: Load Level One[Incomplete]**
+
+The game now starts from the Title screen but at the cost of some new bugs when
+loading in tiles from JSON. As the code base so does my fear of complex logic.
+
+**[Improvements]**
+- There is a position offset that each tile needs have in order to be placed on
+    the grid correctly. I thought of two ways to solve this but I cannot decided
+    which one todo.
+    ~ Option 1, would be to load the offset of each tile using the JSON. This
+        would mean a lot of redundant data being used. The benefit is that I can
+        use a single variable in the script to place the objects.
+    ~ Option 2, would be to check the type of each tile before adding them to
+        the grid to assign the right offset. This would have the opposite effect
+        of Option 1. Less redundant data in the JSON but then my function would
+        have to be expanded every time a new tile is added to the game. 
+
+- I think I need to do a code review because while streaming I confused about
+    my codebase and how the logic flows. It felt very uncomfortable knowing that
+    my code was up to my own personal standards. I may use Friday as a 
+    day to refactor my stuff and write more debugging code.
+    
+**[Positive Note]**
+- After explaining my 'offset' dilemma to a colleague, Sam M., they suggested a
+    possible solution. If I am checking that the JSON files have certain
+    properties then I can check that there is an offset to use. Otherwise, I can
+    use a default offset to place the tiles on the grid. 
+    
+**[Next Goal]Load Level One...**

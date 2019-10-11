@@ -23,8 +23,6 @@ extends Control
 ################################################################################
 func _ready():
 
-	$Panel.visible = false
-
 	#Listen for any controllers that connect to the game
 	var err = GlobalEvents.connect("PlayerControllerConnected", self, "OnPlayerControllerConnected")
 	if(err):
@@ -70,6 +68,8 @@ func OnPlayerControllerDisconnected(id):
 
 func OnYouWin():
 	$Panel.visible = true
+	$Panel/Label.text = "You Win"
+	$Panel/Label.set_anchors_and_margins_preset(Control.PRESET_CENTER)
 	if not GlobalEvents.isWinner:
 		GlobalEvents.isWinner = true
 		$AnimationPlayer.play("FadeIn")

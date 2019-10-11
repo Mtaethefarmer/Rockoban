@@ -92,17 +92,17 @@ func RequestMove(pawn, direction):
 			return UpdatePawnPosition(pawn, start, target)
 		GlobalEvents.TileType.START:
 			print("Player has chosen to start the game...")
-			Clear()
+			Clear(true)
 			GlobalEvents.emit_signal("GoToLevel", 1)
 			return UpdatePawnPosition(pawn, start, target)
 		GlobalEvents.TileType.MAIN_MENU:
-			Clear()
+			Clear(false)
 			GlobalEvents.emit_signal("GoToMainMenu")
 			return UpdatePawnPosition(pawn, start, target)
 		GlobalEvents.TileType.PLAYER:
 			if pawn.Type == GlobalEvents.TileType.PLAYER:
 				if not GlobalEvents.isWinner:
-					Clear()
+					Clear(false)
 				GlobalEvents.emit_signal("YouWin")
 		GlobalEvents.TileType.CRATE:
 			var crate = GetPawn(target)
@@ -117,8 +117,11 @@ func RequestMove(pawn, direction):
 ################################################################################
 #@brief
 #		Clear the board of all pawns
+#@param isAllTiles
+#		boolean value of whether or not exclude players when clearing the board
+#		of all tiles
 ################################################################################
-func Clear():
+func Clear(isAllTiles = true):
 	for x in range(15):
 			for y in range(8):
 				if x != 0 && x != 15 && y != 0 && y != 8:
@@ -126,8 +129,12 @@ func Clear():
 					if tile != GlobalEvents.TileType.PLAYER:
 						set_cellv(Vector2(x,y), GlobalEvents.TileType.OPEN)
 	for child in get_children():
-		if child.Type != GlobalEvents.TileType.PLAYER:
+		if isAllTiles:
 			child.queue_free()
+		else:
+			if child.Type != GlobalEvents.TileType.PLAYER:
+				child.queue_free()
+
 
 ################################################################################
 #@brief

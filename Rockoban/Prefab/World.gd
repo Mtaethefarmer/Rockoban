@@ -23,7 +23,7 @@ func _ready():
 	if(err):
 		print(name + " encountered error code: " + String(err))
 
-	AddPlayers()
+	onGoToLevel(0)
 
 func AddPlayers():
 	var instance = Player1.instance()

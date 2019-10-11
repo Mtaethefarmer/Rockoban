@@ -4,8 +4,8 @@
         "name": "PlayerOne",
         "path": "res://Prefab/Player/Player.tscn",
         "type": -2,
-        "X": 1,
-        "Y": 1,
+        "X": 7,
+        "Y": 6,
         "id": 1,
         "color": "green"
     },
@@ -21,18 +21,10 @@
     },
     "Tile1": 
     {
-        "name": "Crate",
-        "path": "res://Prefab/Object/Crate.tscn",
-        "type": 1,
-        "X": 3,
-        "Y": 3
-    },
-    "Tile2": 
-    {
-        "name": "Crate2",
-        "path": "res://Prefab/Object/Crate.tscn",
-        "type": 1,
-        "X": 10,
-        "Y": 7
+        "name": "StartTile",
+        "path": "res://Prefab/Object/StartTile.tscn",
+        "type": 7,
+        "X": 6,
+        "Y": 5
     }
 }

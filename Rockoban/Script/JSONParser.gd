@@ -16,9 +16,21 @@ func CreateLevelFromJSON(filepath):
 	for tile in LevelJSON:
 		var instance = load(LevelJSON[tile]["path"]).instance()
 		instance.position = Vector2.ZERO
-		instance.name = LevelJSON[tile]["name"]
-		instance.Type = LevelJSON[tile]["type"]
-		instance.GridPosition.x = LevelJSON[tile]["X"]
-		instance.GridPosition.y = LevelJSON[tile]["Y"]
+
+		if LevelJSON[tile]["name"]:
+			instance.name = LevelJSON[tile]["name"]
+
+		if LevelJSON[tile]["type"]:
+			instance.Type = LevelJSON[tile]["type"]
+
+		if LevelJSON[tile]["X"] && LevelJSON[tile]["Y"]:
+			instance.GridPosition.x = LevelJSON[tile]["X"]
+			instance.GridPosition.y = LevelJSON[tile]["Y"]
+
+		if LevelJSON[tile].has("id"):
+			instance.Id = LevelJSON[tile]["id"]
+
+		if LevelJSON[tile].has("color"):
+			instance.modulate = ColorN(LevelJSON[tile]["color"])
 		TileArray.append(instance)
 	return TileArray
