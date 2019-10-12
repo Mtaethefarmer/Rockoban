@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Prefab/World.gd" type="Script" id=1]
+[ext_resource path="res://Script/World.gd" type="Script" id=1]
 [ext_resource path="res://Asset/Art/Tilesheet/sokoban_tilesheet.png" type="Texture" id=2]
 [ext_resource path="res://Script/Grid.gd" type="Script" id=3]
 [ext_resource path="res://Prefab/UI/UI.tscn" type="PackedScene" id=4]

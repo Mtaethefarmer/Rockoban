@@ -33,7 +33,7 @@ func _ready():
 	if(err):
 		print(name + " encountered error code: " + String(err))
 
-	err = GlobalEvents.connect("YouWin", self, "OnYouWin")
+	err = GlobalEvents.connect("YouWin", self, "onYouWin")
 	if(err):
 		print(name + " encountered error code: " + String(err))
 
@@ -44,6 +44,7 @@ func _ready():
 	err = GlobalEvents.connect("GoToLevel", self, "onGoToLevel")
 	if(err):
 		print(name + " encountered error code: " + String(err))
+
 ################################################################################
 #@brief
 #		Play an animation when the controller is connected
@@ -66,7 +67,12 @@ func OnPlayerControllerDisconnected(id):
 	$ConnectedController.text = "Controller " + String(id) + " disconnected."
 	$AnimationPlayer.play("ConnectedControllerFall")
 
-func OnYouWin():
+################################################################################
+#@brief
+#		Reveal the You Win Screen and update the status of the game
+#
+################################################################################
+func onYouWin():
 	$Panel.visible = true
 	$Panel/Label.text = "You Win"
 	$Panel/Label.set_anchors_and_margins_preset(Control.PRESET_CENTER)
@@ -74,10 +80,20 @@ func OnYouWin():
 		GlobalEvents.isWinner = true
 		$AnimationPlayer.play("FadeIn")
 
+################################################################################
+#@brief
+#		Reveal the Main Menu Screen
+#
+################################################################################
 func onGoToMainMenu():
 	$Panel/Label.text = " Rockoban "
 	$Panel/Label.set_anchors_and_margins_preset(Control.PRESET_CENTER)
 
+################################################################################
+#@brief
+#		Hide any unnessecary UI Elements when players are on a level
+#
+################################################################################
 #warning-ignore:unused_argument
 func onGoToLevel(level):
 	$Panel.hide()

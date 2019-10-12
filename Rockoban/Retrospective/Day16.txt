@@ -1,0 +1,26 @@
+**Day 016[MEH]**
+
+**Goal: Transition from Main Menu to Level One[Complete]**
+Fixed many of the bugs that came with getting the players to Level One cleanly.
+And I know I keep saying it but, this time I swear, I can start making levels.
+
+**[Improvements]**
+- When the game starts I am not able to determine which character I am playing.
+    I should add more feedback to each controller/player when they start the 
+    game. 
+
+- I should focus on making a good game rather than being an
+    entertaining streamer. Some advice from Louis, a colleague of mine, was to 
+    make sure that my goals are clear when streaming to the viewers. Game development means doing the research and fixing bugs. This opposes having
+    an entertaining stream. We also talked about time management and if I wanted
+    to be more entertaining I need to devote more time to knowing what features
+    I am making prior to streaming which is not possible for me.
+
+**[Positive Note]**
+- My entire codebase is documented! Now I can build off of that when adding new
+    features.
+
+- I spent a few minutes after the stream fixing a bug that caused multiple
+    players to be on the grid at the same time.
+    
+**[Next Goal]Prototype a level that demonstrates the Co-op part of the game...**

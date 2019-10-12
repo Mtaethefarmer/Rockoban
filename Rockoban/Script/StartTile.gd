@@ -1,13 +1,25 @@
 extends "Pawn.gd"
+################################################################################
+#@file   StartTile.gd
+#@author Devone Reynolds
+#@brief
+#        This is the implementation file for all member functions
+#        of a class called StartTile.
+#
+#		Operations include:
+#        -
+#@par
+#		Discussion:
+#
+################################################################################
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-# Called when the node enters the scene tree for the first time.
+################################################################################
+#@class	StartTile
+#@brief
+#		Moves the player to Level 1
+#		This tile takes up 2 spaces
+#			[ ,x]
+#			x = starting position on the board
+################################################################################
 func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	get_parent().GrowPawn(position, Vector2.LEFT, Type)

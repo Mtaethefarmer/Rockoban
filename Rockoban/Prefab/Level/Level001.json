@@ -14,10 +14,10 @@
         "name": "PlayerTwo",
         "path": "res://Prefab/Player/Player.tscn",
         "type": -2,
-        "X": 6,
-        "Y": 6,
+        "X": 14,
+        "Y": 7,
         "id": 2,
-        "color": "aquamarine"
+        "color": "orange"
     },
     "Tile1": 
     {
@@ -32,7 +32,39 @@
         "name": "Crate2",
         "path": "res://Prefab/Object/Crate.tscn",
         "type": 1,
-        "X": 10,
+        "X": 11,
         "Y": 7
+    },
+    "Tile3":
+    {
+        "name": "Wall1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 1,
+        "Y": 7
+    },
+    "Tile4":
+    {
+        "name": "Wall2",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 3,
+        "Y": 5
+    },
+    "Tile5":
+    {
+        "name": "Wall3",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 4,
+        "Y": 3
+    },
+    "Tile6":
+    {
+        "name": "Wall4",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 2,
+        "Y": 6
     }
 }

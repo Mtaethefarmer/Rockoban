@@ -20,6 +20,8 @@ extends TileMap
 #		 - Positions swapped between global and grid positions
 ################################################################################
 
+const GRID_MAX_X = 15
+const GRID_MAX_Y = 8
 ################################################################################
 #@class	Grid
 #@brief
@@ -27,9 +29,23 @@ extends TileMap
 #
 ################################################################################
 func _ready():
-	for child in get_children():
-		set_cellv(world_to_map(child.position), child.Type)
-		print(String(child.Type) + " World Pos: " + String(child.position) + " Grid Pos: " + String(world_to_map(child.position)))
+	pass
+
+#warning-ignore:unused_argument
+func _process(delta):
+	#Debug active tiles on the grid
+	if Input.is_action_just_pressed("ui_accept"):
+		Print()
+
+################################################################################
+#@brief
+#		Prints all active tiles on the grid
+################################################################################
+func Print():
+	for x in range(GRID_MAX_X):
+			for y in range(GRID_MAX_Y):
+				if get_cellv(Vector2(x,y)) != GlobalEvents.TileType.OPEN and get_cellv(Vector2(x,y)) != GlobalEvents.TileType.WALL:
+					print("Tile: " + String(get_cellv(Vector2(x,y))) + " @ {" + String(x) + ", " +String(y) + "}")
 
 ################################################################################
 #@brief
@@ -48,6 +64,8 @@ func GetPawn(grid_position):
 	for child in get_children():
 		if GetPawnCellPosition(child.position) == grid_position:
 			return child
+		else:
+			print("Could not get pawn at grid position: " + String(grid_position))
 
 ################################################################################
 #@brief
@@ -86,23 +104,19 @@ func RequestMove(pawn, direction):
 			return UpdatePawnPosition(pawn, start, target)
 		GlobalEvents.TileType.CONTINUE:
 			print("Player has chosen to continue...")
-			return UpdatePawnPosition(pawn, start, target)
 		GlobalEvents.TileType.LEVEL_SELECT:
 			print("Player has chosen to select another level...")
-			return UpdatePawnPosition(pawn, start, target)
 		GlobalEvents.TileType.START:
 			print("Player has chosen to start the game...")
-			Clear(true)
+			Clear()
 			GlobalEvents.emit_signal("GoToLevel", 1)
-			return UpdatePawnPosition(pawn, start, target)
 		GlobalEvents.TileType.MAIN_MENU:
-			Clear(false)
+			Clear()
 			GlobalEvents.emit_signal("GoToMainMenu")
-			return UpdatePawnPosition(pawn, start, target)
 		GlobalEvents.TileType.PLAYER:
 			if pawn.Type == GlobalEvents.TileType.PLAYER:
 				if not GlobalEvents.isWinner:
-					Clear(false)
+					Clear()
 				GlobalEvents.emit_signal("YouWin")
 		GlobalEvents.TileType.CRATE:
 			var crate = GetPawn(target)
@@ -117,24 +131,18 @@ func RequestMove(pawn, direction):
 ################################################################################
 #@brief
 #		Clear the board of all pawns
-#@param isAllTiles
-#		boolean value of whether or not exclude players when clearing the board
-#		of all tiles
+#
 ################################################################################
-func Clear(isAllTiles = true):
-	for x in range(15):
-			for y in range(8):
-				if x != 0 && x != 15 && y != 0 && y != 8:
-					var tile = get_cellv(Vector2(x,y))
-					if tile != GlobalEvents.TileType.PLAYER:
-						set_cellv(Vector2(x,y), GlobalEvents.TileType.OPEN)
-	for child in get_children():
-		if isAllTiles:
-			child.queue_free()
-		else:
-			if child.Type != GlobalEvents.TileType.PLAYER:
-				child.queue_free()
+func Clear():
+	#Set every cell to open
+	for x in range(GRID_MAX_X):
+			for y in range(GRID_MAX_Y):
+				if x != 0 && y != 0 && x != GRID_MAX_X + 1 && y != GRID_MAX_Y + 1:
+					set_cellv(Vector2(x,y), GlobalEvents.TileType.OPEN)
 
+	#Remove any children of the grid
+	for child in get_children():
+			child.queue_free()
 
 ################################################################################
 #@brief
@@ -150,6 +158,12 @@ func UpdatePawnPosition(pawn, start, target):
 #		Add a pawn to the board
 ################################################################################
 func AddPawn(pawn, gridPosition, offset = Vector2.ZERO):
+	#Print error if not within the bounds of the grid
+	if gridPosition.x >= GRID_MAX_X && gridPosition.y >= GRID_MAX_Y:
+		print("Could not place Pawn: [" + pawn.name + "] @ GridPos: " + String(gridPosition))
+		print("~Outside of Grid.")
+		return
+
 	#Print error if grid position is occupied
 	if get_cellv(gridPosition) == GlobalEvents.TileType.OPEN:
 		#This assumes the pawn is already instanced and has a GridType
@@ -158,3 +172,4 @@ func AddPawn(pawn, gridPosition, offset = Vector2.ZERO):
 		set_cellv(gridPosition, pawn.Type)
 	else:
 		print("Could not place Pawn: [" + pawn.name + "] @ GridPos: " + String(gridPosition))
+		print("~Tile " + GetPawn(gridPosition).name + " with type: " + String(GetPawn(gridPosition).Type) + " is blocking.")

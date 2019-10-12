@@ -17,7 +17,9 @@ extends "Pawn.gd"
 #@class	ContinueTile
 #@brief
 #		Resume the game after being paused
-#
+#		This tile takes up 2 spaces
+#			[ ,x]
+#			x = starting position on the board
 ################################################################################
 func _ready():
 	get_parent().GrowPawn(position, Vector2.LEFT, Type)

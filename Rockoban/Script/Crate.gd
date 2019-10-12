@@ -36,6 +36,7 @@ func _ready():
 
 	if(err):
 		print(name + " encountered error code: " + String(err))
+
 ################################################################################
 #@brief
 #		Asks the grid to the move the crate in game
@@ -47,6 +48,7 @@ func onMoveTheCrate(dir):
 	#If the crate can move, set its new position
 	if newPosition:
 		position = newPosition
+
 ################################################################################
 #@brief
 #		Lets the game know that ca crate has sunk and needs to be removed
