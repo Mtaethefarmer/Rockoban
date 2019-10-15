@@ -64,8 +64,8 @@ func GetPawn(grid_position):
 	for child in get_children():
 		if GetPawnCellPosition(child.position) == grid_position:
 			return child
-		else:
-			print("Could not get pawn at grid position: " + String(grid_position))
+#		else:
+#			print("Could not get pawn at grid position: " + String(grid_position))
 
 ################################################################################
 #@brief
@@ -122,6 +122,8 @@ func RequestMove(pawn, direction):
 			var crate = GetPawn(target)
 			if crate:
 				crate.emit_signal("CrateMove", direction)
+			else:
+				print("Could not move crate because crate was not there.")
 		GlobalEvents.TileType.HOLE:
 			if pawn.Type == GlobalEvents.TileType.CRATE:
 				var hole = GetPawn(target)

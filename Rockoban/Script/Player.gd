@@ -68,16 +68,16 @@ func GetInput():
 	#
 	direction = Vector2()
 	if Id == PlayerID.ONE:
-		if Input.is_action_just_pressed("PlayerOneMoveLeft"):
+		if Input.is_action_pressed("PlayerOneMoveLeft"):
 			direction += Vector2.LEFT
 			animationName = "walk_left"
-		elif Input.is_action_just_pressed("PlayerOneMoveRight"):
+		elif Input.is_action_pressed("PlayerOneMoveRight"):
 			direction += Vector2.RIGHT
 			animationName = "walk_right"
-		elif Input.is_action_just_pressed("PlayerOneMoveUp"):
+		elif Input.is_action_pressed("PlayerOneMoveUp"):
 			direction += Vector2.UP
 			animationName = "walk_up"
-		elif Input.is_action_just_pressed("PlayerOneMoveDown"):
+		elif Input.is_action_pressed("PlayerOneMoveDown"):
 			direction += Vector2.DOWN
 			animationName = "walk_down"
 	if Id == PlayerID.TWO:

@@ -1,0 +1,32 @@
+**Day 017[GREAT]**
+
+**Goal: Prototype a level [Complete]**
+Prototyped and created Level 1 which has both players move crates to reach each
+other.
+
+**[Improvements]**
+- I should find a better way to inform myself that I could not get a pawn from
+    a certain grid position. Right now it will spam the debug console which
+    will make me lose other important messages if they come up.
+
+- Now that there is a level to play in I notice that there is a lack of sounds
+    going on in the game. The world sounds very empty, cold with fluorescent 
+    lights.
+
+- It was suggested that I allow voice chat since I do not have many views at
+    the moment. I would not be bothersome and it would allow me to have more 
+    fluid conversations while streaming. 
+
+- *Bug*
+    Crates can push each other. I should be checking which pawn wants to move
+    the crate to fix that. 
+
+**[Positive Note]**
+- I was done designing the level quite early and it gave me time to playtest it
+    to find any special cases like the bug mentioned above. Glad I found it
+    before someone else did. 
+
+- My friends are involved in the stream. Louis came by and played his guitar 
+    on-stream and Abi joined in the chat 
+    
+**[Next Goal]Implement a way for the players to Pause the game...**
