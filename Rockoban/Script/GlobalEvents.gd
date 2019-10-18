@@ -32,7 +32,10 @@ signal YouWin()
 signal GoToMainMenu()
 #warning-ignore:unused_signal
 signal GoToLevel(level)
-
+#warning-ignore:unused_signal
+signal Pause()
+#warning-ignore:unused_class_variable
+var isPaused = false
 #warning-ignore:unused_class_variable
 var isWinner = false
 

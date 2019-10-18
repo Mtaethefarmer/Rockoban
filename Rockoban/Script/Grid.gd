@@ -49,7 +49,11 @@ func Print():
 
 ################################################################################
 #@brief
-#		Get a pawn grid position when given world coordinatesS
+#		Get a pawn grid position when given world coordinates
+#@param position
+#		Global position of the pawn
+#@return
+#		Position on the grid that the pawn is located
 ################################################################################
 func GetPawnCellPosition(position):
 	for child in get_children():
@@ -136,6 +140,7 @@ func RequestMove(pawn, direction):
 #
 ################################################################################
 func Clear():
+	print("Clearing the board")
 	#Set every cell to open
 	for x in range(GRID_MAX_X):
 			for y in range(GRID_MAX_Y):
@@ -175,3 +180,4 @@ func AddPawn(pawn, gridPosition, offset = Vector2.ZERO):
 	else:
 		print("Could not place Pawn: [" + pawn.name + "] @ GridPos: " + String(gridPosition))
 		print("~Tile " + GetPawn(gridPosition).name + " with type: " + String(GetPawn(gridPosition).Type) + " is blocking.")
+

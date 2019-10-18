@@ -45,6 +45,10 @@ func _ready():
 	if(err):
 		print(name + " encountered error code: " + String(err))
 
+	err = GlobalEvents.connect("Pause", self, "onPause")
+	if(err):
+		print(name + " encountered error code: " + String(err))
+
 ################################################################################
 #@brief
 #		Play an animation when the controller is connected
@@ -97,3 +101,21 @@ func onGoToMainMenu():
 #warning-ignore:unused_argument
 func onGoToLevel(level):
 	$Panel.hide()
+
+################################################################################
+#@brief
+#		Show a pause menu when the game is paused
+#
+################################################################################
+func onPause():
+	if GlobalEvents.isPaused:
+		$Panel.hide()
+		GlobalEvents.isPaused = false;
+		print("Un-Paused the game.")
+	else:
+		$Panel.self_modulate = Color(1,1,1,0.5)
+		$Panel.show()
+		$Panel/Label.text = " Paused "
+		$Panel/Label.set_anchors_and_margins_preset(Control.PRESET_CENTER)
+		GlobalEvents.isPaused = true;
+		print("Paused the game.")

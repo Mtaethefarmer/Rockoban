@@ -34,8 +34,8 @@ func _ready():
 		print(name + " encountered error code: " + String(err))
 
 #warning-ignore:unused_argument
-func _process(delta):
-	var d = GetInput()
+func _input(event):
+	var d = GetInput(event)
 
 	if not d:
 		return
@@ -58,41 +58,52 @@ func _process(delta):
 	else:
 		$AnimationPlayer.play("bump")
 
+#func _input(event):
+#	if event is InputEventJoypadButton:
+#		print(event.button_index)
 
 ################################################################################
 #@brief
 #		Determines which direction Player One will move based on contoller
 #		input
 ################################################################################
-func GetInput():
-	#
+func GetInput(event):
+
+	#Movement
 	direction = Vector2()
 	if Id == PlayerID.ONE:
-		if Input.is_action_pressed("PlayerOneMoveLeft"):
+		if event.is_action_pressed("PlayerOneMoveLeft"):
 			direction += Vector2.LEFT
 			animationName = "walk_left"
-		elif Input.is_action_pressed("PlayerOneMoveRight"):
+		elif event.is_action_pressed("PlayerOneMoveRight"):
 			direction += Vector2.RIGHT
 			animationName = "walk_right"
-		elif Input.is_action_pressed("PlayerOneMoveUp"):
+		elif event.is_action_pressed("PlayerOneMoveUp"):
 			direction += Vector2.UP
 			animationName = "walk_up"
-		elif Input.is_action_pressed("PlayerOneMoveDown"):
+		elif event.is_action_pressed("PlayerOneMoveDown"):
 			direction += Vector2.DOWN
 			animationName = "walk_down"
+
+		#Pause from player one
+		if event.is_action_released("Pause"):
+			print("Player " + String(Id) + " has chosen the press pause")
+			GlobalEvents.emit_signal("Pause")
+
 	if Id == PlayerID.TWO:
-		if Input.is_action_pressed("PlayerTwoMoveLeft"):
+		if event.is_action_pressed("PlayerTwoMoveLeft"):
 			direction += Vector2.LEFT
 			animationName = "walk_left"
-		if Input.is_action_pressed("PlayerTwoMoveRight"):
+		if event.is_action_pressed("PlayerTwoMoveRight"):
 			direction += Vector2.RIGHT
 			animationName = "walk_right"
-		if Input.is_action_pressed("PlayerTwoMoveUp"):
+		if event.is_action_pressed("PlayerTwoMoveUp"):
 			direction += Vector2.UP
 			animationName = "walk_up"
-		if Input.is_action_pressed("PlayerTwoMoveDown"):
+		if event.is_action_pressed("PlayerTwoMoveDown"):
 			direction += Vector2.DOWN
 			animationName = "walk_down"
+
 	return direction
 
 ################################################################################
@@ -114,3 +125,23 @@ func _on_joy_connection_changed(device_id, connected):
 	else:
 		print("Controller " + String(device_id+1) + " is disconnected.")
 		GlobalEvents.emit_signal("PlayerControllerDisconneted", device_id+1)
+
+################################################################################
+#@brief
+#		Storing all player data in a dictionary
+#@return
+#		All player data as a dictionary
+#
+################################################################################
+func Save():
+	var save_data = {
+		"name": name,
+		"path": filename,
+		"type": -2,
+		"X": get_parent().GetPawnCellPosition(position).x,
+		"Y": get_parent().GetPawnCellPosition(position).y,
+		"id": Id,
+		"color": modulate
+	}
+	print(save_data)
+	return save_data

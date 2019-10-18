@@ -24,7 +24,7 @@ func _ready():
 
 ################################################################################
 #@brief
-#		Tool used for reading and parsing JSON files
+#		Reading and parsing JSON files into Nodes
 #@param json
 #			Filepath for the json file to be read
 #@return
@@ -39,6 +39,22 @@ func LoadJSON(json):
 		print("Unable to read JSON file: " + json)
 	file.close()
 	return LevelJSON
+
+################################################################################
+#@brief
+#		Saving Nodes into a JSON file
+#@param level
+#			Container of nodes to be saved
+#
+################################################################################
+func SaveJSON(level):
+	var file = File.new()
+	file.open("res://Resource/SaveData.json", File.WRITE)
+
+	for tile in level:
+		var data = tile.call("Save")
+		file.store_line(to_json(data))
+	file.close()
 
 ################################################################################
 #@brief

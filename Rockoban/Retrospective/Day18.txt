@@ -1,0 +1,32 @@
+**Day 018[GOOD]**
+
+**Goal: Implement a way for the players to Pause the game[Complete]**
+
+Using both the R2 and Start Menu buttons players can pause the game. Loads
+of bugs were found this way, I'll be excited to see them go.
+
+**[Improvements]**
+- I should select all devices on the Input Map instead of individual devices.
+    This would be to future proof if I decide to add more than two players
+    to the game.
+
+- *Bug*
+    The R2 button can pause the game also because one of the controllers I use
+    maps its Start Button to the same button R2 is for. 
+
+- *Bug*
+    The player fall in the parallel processing pitfall. Since both players 
+    share the same script input becomes doubled by default. Finding a way for
+    them to have the same codebase without duplicating code is my goal.
+
+- *Bug*
+    Crates can push the last one in at end of a line of crates. It makes it
+    seem that force from the player into the crates transfers to the last one.
+
+**[Positive Note]**
+- I found a better way to guarantee that Input handling is only happening once.
+    https://github.com/godotengine/godot/issues/24944
+
+- Even with midterms happening, I still find time to stream. 
+    
+**[Next Goal]Save a level before pausing...**

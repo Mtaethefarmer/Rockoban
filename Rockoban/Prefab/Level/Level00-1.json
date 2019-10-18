@@ -1,0 +1,22 @@
+{
+    "Player1":
+    {
+        "name": "PlayerOne",
+        "path": "res://Prefab/Player/Player.tscn",
+        "type": -2,
+        "X": 3,
+        "Y": 6,
+        "id": 1,
+        "color": "green"
+    },
+    "Player2":
+    {
+        "name": "PlayerTwo",
+        "path": "res://Prefab/Player/Player.tscn",
+        "type": -2,
+        "X": 10,
+        "Y": 6,
+        "id": 2,
+        "color": "orange"
+    }
+}

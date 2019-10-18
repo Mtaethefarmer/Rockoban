@@ -1,4 +1,9 @@
 Useful information for making levels
+Special Levels:
+Level000  = Main Menu
+Level00-1 = Pause Menu
+Level00-2 = LevelSelect Menu
+Level00-2 = Intermission Menu
 
 Tile types are:
     PLAYER          = -2
