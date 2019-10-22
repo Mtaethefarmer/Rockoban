@@ -134,14 +134,31 @@ func _on_joy_connection_changed(device_id, connected):
 #
 ################################################################################
 func Save():
-	var save_data = {
-		"name": name,
+	var name_ind1 = get_parent().get_node("Player1")
+	var name_ind2 = get_parent().get_node("Player2")
+	var color = "white"
+	var save_data
+
+	if Id == 1:
+		color = "green"
+		save_data = {
+		"name": name_ind1.name,
 		"path": filename,
 		"type": -2,
-		"X": get_parent().GetPawnCellPosition(position).x,
-		"Y": get_parent().GetPawnCellPosition(position).y,
-		"id": Id,
-		"color": modulate
-	}
-	print(save_data)
+		"X": get_parent().GetPawnCellPosition(name_ind1.position).x,
+		"Y": get_parent().GetPawnCellPosition(name_ind1.position).y,
+		"id": name_ind1.Id,
+		"color": color
+		}
+	else:
+		color = "orange"
+		save_data = {
+		"name": name_ind2.name,
+		"path": filename,
+		"type": -2,
+		"X": get_parent().GetPawnCellPosition(name_ind2.position).x,
+		"Y": get_parent().GetPawnCellPosition(name_ind2.position).y,
+		"id": name_ind2.Id,
+		"color": color
+		}
 	return save_data

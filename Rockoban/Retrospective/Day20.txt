@@ -1,0 +1,18 @@
+**Day 020[MEH]**
+
+**Goal: Save a level before pausing [Incomplete]**
+
+Both players have their data being saved and loaded while pausing. While doing
+this I realized some of the issues I have with having the logic for both 
+players in the same script.
+
+**[Improvements]**
+- I should separate both player's logic so that I will not have more bugs show
+    up as I added more features to the players. Thinking about it now I could 
+    assign the Player Id as controllers are detected by the game and use that
+    to consolidate the code. Hrmm...
+
+**[Positive Note]**
+- *Forgot to take notes...*
+    
+**[Next Goal]Save a level before pausing...**

@@ -26,7 +26,6 @@ const GRID_MAX_Y = 8
 #@class	Grid
 #@brief
 #		Controls all logic for pawns on the grid
-#
 ################################################################################
 func _ready():
 	pass
@@ -63,6 +62,10 @@ func GetPawnCellPosition(position):
 ################################################################################
 #@brief
 #		Get a pawn when given grid position
+#@param grid_position
+#		Poisition in grid coordinates
+#@return
+#		Node at that grid position, NULL if no pawn was there
 ################################################################################
 func GetPawn(grid_position):
 	for child in get_children():
@@ -74,6 +77,12 @@ func GetPawn(grid_position):
 ################################################################################
 #@brief
 #		Expand a pawns size on the board
+#@param position
+#		Global position of the pawn
+#@param direction
+#		Which direction to grow the pawn in
+#@param type
+#		Type of tile
 ################################################################################
 func GrowPawn(position, direction, type):
 	var start = world_to_map(position)
@@ -87,6 +96,8 @@ func GrowPawn(position, direction, type):
 ################################################################################
 #@brief
 #		Remove a pawn from the board
+#param pawn
+#		Pawn to be removed from the board
 ################################################################################
 func RemovePawn(pawn):
 	var cell_position = world_to_map(pawn.position)
@@ -97,6 +108,12 @@ func RemovePawn(pawn):
 #@brief
 #		Move a pawn on the board.
 #		Handles most of the logic for moving things on the board
+#@param pawn
+#		Pawn that is requesting to be moved on the grid
+#@param direction
+#		Direction that the pawn wants to move in
+#@return
+#		New global position that the pawn moves to, or NULL if pawn did not move
 ################################################################################
 func RequestMove(pawn, direction):
 	#Both are in grid coords
@@ -123,11 +140,14 @@ func RequestMove(pawn, direction):
 					Clear()
 				GlobalEvents.emit_signal("YouWin")
 		GlobalEvents.TileType.CRATE:
-			var crate = GetPawn(target)
-			if crate:
-				crate.emit_signal("CrateMove", direction)
+			if pawn.Type == GlobalEvents.TileType.CRATE:
+				continue
 			else:
-				print("Could not move crate because crate was not there.")
+				var crate = GetPawn(target)
+				if crate:
+					crate.emit_signal("CrateMove", direction)
+				else:
+					print("Could not move crate because crate was not there.")
 		GlobalEvents.TileType.HOLE:
 			if pawn.Type == GlobalEvents.TileType.CRATE:
 				var hole = GetPawn(target)
@@ -137,7 +157,6 @@ func RequestMove(pawn, direction):
 ################################################################################
 #@brief
 #		Clear the board of all pawns
-#
 ################################################################################
 func Clear():
 	print("Clearing the board")
@@ -149,11 +168,20 @@ func Clear():
 
 	#Remove any children of the grid
 	for child in get_children():
+			remove_child(child)
 			child.queue_free()
 
 ################################################################################
 #@brief
 #		Set a pawn's position on the board
+#@param pawn
+#		Pawn that is requesting to be moved on the grid
+#@param start
+#		Current location of the pawn in grid coordinates
+#@param target
+#		Requested location in grid coordinates
+#@return
+#		New location in world coordinates
 ################################################################################
 func UpdatePawnPosition(pawn, start, target):
 		set_cellv(target, pawn.Type)
@@ -163,6 +191,12 @@ func UpdatePawnPosition(pawn, start, target):
 ################################################################################
 #@brief
 #		Add a pawn to the board
+#@param pawn
+#		Request pawn to tadd to the grid
+#@param gridPosition
+#		Location on the grid
+#@param offset
+#		For tiles whose textures need to be aligned on the board correctly
 ################################################################################
 func AddPawn(pawn, gridPosition, offset = Vector2.ZERO):
 	#Print error if not within the bounds of the grid

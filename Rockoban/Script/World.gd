@@ -51,10 +51,12 @@ func onGoToLevel(level):
 ################################################################################
 func OnPause():
 	if GlobalEvents.isPaused:
+		$Grid.Clear()
 		var tiles = $JSONParser.CreateLevelFromJSON("res://Resource/SaveData.json")
 		for tile in tiles:
+			print(tile.name)
 			$Grid.AddPawn(tile, Vector2(tile.GridPosition.x, tile.GridPosition.y), $Grid.cell_size/2)
 	else:
-		$Grid.Clear()
 		$JSONParser.SaveJSON($Grid.get_children())
+		$Grid.Clear()
 		onGoToLevel(-1)

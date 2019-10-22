@@ -1,7 +1,7 @@
 {
     "Player1":
     {
-        "name": "PlayerOne",
+        "name": "Player1",
         "path": "res://Prefab/Player/Player.tscn",
         "type": -2,
         "X": 3,
@@ -11,7 +11,7 @@
     },
     "Player2":
     {
-        "name": "PlayerTwo",
+        "name": "Player2",
         "path": "res://Prefab/Player/Player.tscn",
         "type": -2,
         "X": 10,

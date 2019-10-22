@@ -1,0 +1,18 @@
+**Day 021[GOOD]**
+
+**Goal: Save a level before pausing [Complete]**
+
+Every pawn is now being saved and loaded upon pausing the game! I also had
+a chance to fix some other minor bugs and do some more code reviews.
+
+**[Improvements]**
+- I should not rush the setup of my stream. I forgot to change the title listed
+    on the streaming website because it was not apart of my checklist. I also
+    forgot to change which mic I was using. 
+
+**[Positive Note]**
+- A new random stranger appeared at high noon(close to when the stream was 
+    ending). I wish I had a chance to say hi but I think they heard me say
+    how much I appreciate them showing up. 
+    
+**[Next Goal]Implement newly designed Pause Screen...**

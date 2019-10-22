@@ -27,5 +27,21 @@ var GridPosition = Vector2()
 func _ready():
 	pass # Replace with function body.
 
+################################################################################
+#@brief
+#		Storing all pawn data in a dictionary
+#@return
+#		All pawn data as a dictionary
+#@note By default all pawns will save their name, scene path, position and
+#		thier tile type
+################################################################################
 func Save():
-	pass
+	var save_data={
+		"name": name,
+		"path": filename,
+		"type": Type,
+		"X": get_parent().GetPawnCellPosition(position).x,
+		"Y": get_parent().GetPawnCellPosition(position).y,
+	}
+	#print(save_data)
+	return save_data

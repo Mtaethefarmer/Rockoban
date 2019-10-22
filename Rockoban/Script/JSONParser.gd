@@ -50,10 +50,10 @@ func LoadJSON(json):
 func SaveJSON(level):
 	var file = File.new()
 	file.open("res://Resource/SaveData.json", File.WRITE)
-
+	var data = {}
 	for tile in level:
-		var data = tile.call("Save")
-		file.store_line(to_json(data))
+		data[tile.name] = tile.call("Save")
+	file.store_line(to_json(data))
 	file.close()
 
 ################################################################################

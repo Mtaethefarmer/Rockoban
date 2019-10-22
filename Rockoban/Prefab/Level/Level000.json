@@ -1,7 +1,6 @@
 {
-    "Player1":
-    {
-        "name": "PlayerOne",
+    "Player1": {
+        "name": "Player1",
         "path": "res://Prefab/Player/Player.tscn",
         "type": -2,
         "X": 3,
@@ -9,9 +8,8 @@
         "id": 1,
         "color": "green"
     },
-    "Player2":
-    {
-        "name": "PlayerTwo",
+    "Player2": {
+        "name": "Player2",
         "path": "res://Prefab/Player/Player.tscn",
         "type": -2,
         "X": 10,
@@ -19,8 +17,7 @@
         "id": 2,
         "color": "orange"
     },
-    "Tile1": 
-    {
+    "Tile1": {
         "name": "StartTile",
         "path": "res://Prefab/Object/StartTile.tscn",
         "type": 7,
