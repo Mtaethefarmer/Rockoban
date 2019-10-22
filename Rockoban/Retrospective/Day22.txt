@@ -1,0 +1,26 @@
+**Day 022[MEH]**
+
+**Goal: Implement newly designed Pause Screen[Incomplete]**
+
+Took longer than expected, but the first tile for the Pause Menu is in,
+still needs logic thou. Figured out how I wanted to handle the offset issue
+so there is not any unnecessary data, in the meantime.
+
+**[Improvements]**
+- I should be looking at more cooperative puzzles to find out what works
+    for my style of game. When I start designing new levels I want to have a 
+    fresh and plentiful outlook.
+
+- I should show prototyping and implementing a level on stream, I feel very 
+    close to being able to do just that and produce up to 2 levels at a time.
+
+- I am unsure if I should aim to be a twitch affiliate as apart of my game 
+    development process. It does feel a bit extra but also a missed 
+    opportunity.
+
+**[Positive Note]**
+- I feel happy about being so close to rapid prototyping status. Looking back
+    it does feel like it was a road to get here, but now that I can. I feel 
+    more focused on designing new levels.
+    
+**[Next Goal]Implement newly designed Pause Screen...**

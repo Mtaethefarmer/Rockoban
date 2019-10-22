@@ -19,9 +19,11 @@
     },
     "Tile1": {
         "name": "StartTile",
-        "path": "res://Prefab/Object/StartTile.tscn",
+        "path": "res://Prefab/UI/StartTile.tscn",
         "type": 7,
         "X": 6,
-        "Y": 5
+        "Y": 5,
+        "offsetX": 0,
+        "offsetY": 32
     }
 }

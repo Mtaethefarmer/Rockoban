@@ -88,5 +88,15 @@ func CreateLevelFromJSON(filepath):
 		if LevelJSON[tile].has("color"):
 			instance.modulate = ColorN(LevelJSON[tile]["color"])
 
+		if LevelJSON[tile].has("offsetX"):
+			instance.Offset.x += LevelJSON[tile]["offsetX"]
+		else:
+			instance.Offset.x += 32
+
+		if LevelJSON[tile].has("offsetY"):
+			instance.Offset.y += LevelJSON[tile]["offsetY"]
+		else:
+			instance.Offset.y += 32
+
 		TileArray.append(instance)
 	return TileArray

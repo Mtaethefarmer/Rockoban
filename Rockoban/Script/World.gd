@@ -42,7 +42,7 @@ func _ready():
 func onGoToLevel(level):
 	var tiles = $JSONParser.CreateLevelFromJSON("res://Prefab/Level/Level00" + String(level) + ".json")
 	for tile in tiles:
-		$Grid.AddPawn(tile, Vector2(tile.GridPosition.x, tile.GridPosition.y), $Grid.cell_size/2)
+		$Grid.AddPawn(tile, Vector2(tile.GridPosition.x, tile.GridPosition.y), tile.Offset)
 
 ################################################################################
 #@brief
@@ -55,7 +55,7 @@ func OnPause():
 		var tiles = $JSONParser.CreateLevelFromJSON("res://Resource/SaveData.json")
 		for tile in tiles:
 			print(tile.name)
-			$Grid.AddPawn(tile, Vector2(tile.GridPosition.x, tile.GridPosition.y), $Grid.cell_size/2)
+			$Grid.AddPawn(tile, Vector2(tile.GridPosition.x, tile.GridPosition.y), tile.Offset)
 	else:
 		$JSONParser.SaveJSON($Grid.get_children())
 		$Grid.Clear()

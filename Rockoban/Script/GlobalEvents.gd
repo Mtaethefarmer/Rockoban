@@ -40,7 +40,19 @@ var isPaused = false
 var isWinner = false
 
 
-enum TileType{PLAYER = -2 , OPEN, WALL, CRATE, HOLE, CONTINUE, LEVEL_SELECT, QUIT, MAIN_MENU, START}
+enum TileType{	PLAYER = -2 ,
+				OPEN,
+				WALL,
+				CRATE,
+				HOLE,
+				CONTINUE,
+				LEVEL_SELECT,
+				QUIT,
+				MAIN_MENU,
+				START,
+				RESTART,
+				OPTIONS
+				}
 
 
 # Called when the node enters the scene tree for the first time.

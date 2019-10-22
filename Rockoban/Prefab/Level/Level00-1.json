@@ -4,8 +4,8 @@
         "name": "Player1",
         "path": "res://Prefab/Player/Player.tscn",
         "type": -2,
-        "X": 3,
-        "Y": 6,
+        "X": 7,
+        "Y": 5,
         "id": 1,
         "color": "green"
     },
@@ -14,9 +14,18 @@
         "name": "Player2",
         "path": "res://Prefab/Player/Player.tscn",
         "type": -2,
-        "X": 10,
-        "Y": 6,
+        "X": 8,
+        "Y": 5,
         "id": 2,
         "color": "orange"
+    },
+    "Tile1": {
+        "name": "ContinueTile",
+        "path": "res://Prefab/UI/ContinueTile.tscn",
+        "type": 3,
+        "X": 8,
+        "Y": 3,
+        "offsetX": 0,
+        "offsetY": 32
     }
 }

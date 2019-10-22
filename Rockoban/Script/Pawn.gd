@@ -18,6 +18,8 @@ extends Node2D
 export(GlobalEvents.TileType) var Type = GlobalEvents.TileType.OPEN
 #warning-ignore:unused_class_variable
 var GridPosition = Vector2()
+#warning-ignore:unused_class_variable
+var Offset = Vector2()
 ################################################################################
 #@class	Pawn
 #@brief
@@ -42,6 +44,8 @@ func Save():
 		"type": Type,
 		"X": get_parent().GetPawnCellPosition(position).x,
 		"Y": get_parent().GetPawnCellPosition(position).y,
+		"offsetX": Offset.x,
+		"offsetY": Offset.y
 	}
 	#print(save_data)
 	return save_data

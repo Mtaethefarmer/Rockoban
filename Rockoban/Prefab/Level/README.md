@@ -16,6 +16,8 @@ Tile types are:
     QUIT            = 5
     MAIN_MENU       = 6 
     START           = 7
+    RESTART         = 8
+    OPTIONS         = 9
 
 Colors are:
     gray = Color( 0.75, 0.75, 0.75, 1 )
