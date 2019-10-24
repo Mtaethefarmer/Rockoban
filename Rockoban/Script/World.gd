@@ -40,6 +40,14 @@ func _ready():
 #
 ################################################################################
 func onGoToLevel(level):
+	#Unpause the game
+	GlobalEvents.isPaused = false
+
+	#Check if level is not a Menu
+	if level >= 0:
+		GlobalEvents.CurrentLevel = level
+
+	#Load the specified level
 	var tiles = $JSONParser.CreateLevelFromJSON("res://Prefab/Level/Level00" + String(level) + ".json")
 	for tile in tiles:
 		$Grid.AddPawn(tile, Vector2(tile.GridPosition.x, tile.GridPosition.y), tile.Offset)

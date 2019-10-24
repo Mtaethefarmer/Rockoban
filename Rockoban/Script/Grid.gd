@@ -121,10 +121,14 @@ func RequestMove(pawn, direction):
 	var target = start + direction
 
 	match get_cellv(target):
+		GlobalEvents.TileType.RESTART:
+			Clear()
+			GlobalEvents.emit_signal("GoToLevel", GlobalEvents.CurrentLevel)
 		GlobalEvents.TileType.OPEN:
 			return UpdatePawnPosition(pawn, start, target)
 		GlobalEvents.TileType.CONTINUE:
 			print("Player has chosen to continue...")
+			GlobalEvents.emit_signal("Pause")
 		GlobalEvents.TileType.LEVEL_SELECT:
 			print("Player has chosen to select another level...")
 		GlobalEvents.TileType.START:
@@ -133,7 +137,7 @@ func RequestMove(pawn, direction):
 			GlobalEvents.emit_signal("GoToLevel", 1)
 		GlobalEvents.TileType.MAIN_MENU:
 			Clear()
-			GlobalEvents.emit_signal("GoToMainMenu")
+			GlobalEvents.emit_signal("GoToLevel", 0)
 		GlobalEvents.TileType.PLAYER:
 			if pawn.Type == GlobalEvents.TileType.PLAYER:
 				if not GlobalEvents.isWinner:

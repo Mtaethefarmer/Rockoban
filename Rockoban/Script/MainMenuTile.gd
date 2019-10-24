@@ -14,9 +14,9 @@ extends "Pawn.gd"
 ################################################################################
 
 ################################################################################
-#@class	LevelSelectTile
+#@class	MainMenuTile
 #@brief
-#		Moves the player to the level select screen
+#		Moves the player to the main menu screen
 #		This tile takes up 2 spaces
 #			[ ,x]
 #			x = starting position on the board

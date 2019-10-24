@@ -116,6 +116,6 @@ func onPause():
 		$Panel.self_modulate = Color(1,1,1,0.5)
 		$Panel.show()
 		$Panel/Label.text = " Paused "
-		$Panel/Label.set_anchors_and_margins_preset(Control.PRESET_CENTER)
+		$Panel/Label.set_anchors_and_margins_preset(Control.PRESET_CENTER_TOP)
 		GlobalEvents.isPaused = true;
 		print("Paused the game.")

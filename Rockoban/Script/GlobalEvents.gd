@@ -38,6 +38,8 @@ signal Pause()
 var isPaused = false
 #warning-ignore:unused_class_variable
 var isWinner = false
+#warning-ignore:unused_class_variable
+var CurrentLevel = 0
 
 
 enum TileType{	PLAYER = -2 ,
@@ -51,7 +53,8 @@ enum TileType{	PLAYER = -2 ,
 				MAIN_MENU,
 				START,
 				RESTART,
-				OPTIONS
+				OPTIONS,
+				QUESTS
 				}
 
 

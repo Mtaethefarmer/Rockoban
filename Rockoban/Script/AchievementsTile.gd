@@ -1,10 +1,10 @@
-extends "Pawn.gd"
+extends "BaseButton.gd"
 ################################################################################
-#@file   OptionsTile.gd
+#@file   QuestsTile.gd
 #@author Devone Reynolds
 #@brief
 #        This is the implementation file for all member functions
-#        of a class called OptionsTile.
+#        of a class called QuestsTile.
 #
 #		Operations include:
 #		-
@@ -14,12 +14,12 @@ extends "Pawn.gd"
 ################################################################################
 
 ################################################################################
-#@class	OptionsTile
+#@class	LevelSelectTile
 #@brief
-#		Moves the player to the Options Menu
+#		Moves the player to the Quest Menu
 #		This tile takes up 2 spaces
 #			[ ,x]
 #			x = starting position on the board
 ################################################################################
 func _ready():
-	get_parent().GrowPawn(position, Vector2.LEFT, Type)
+	pass

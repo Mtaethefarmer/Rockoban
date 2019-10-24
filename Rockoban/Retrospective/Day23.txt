@@ -1,0 +1,23 @@
+**Day 023[GREAT]**
+
+**Goal: Implement newly designed Pause Screen[Complete]**
+
+Pause screen is looking great, with half the buttons fully implemented. This
+makes the game quite close to having a coherent game loop. 
+
+**[Improvements]**
+- I should make a default button to speed up the UI implementation process.
+    That way I have more time to play with the color scheme or color of each
+    button from JSON, cause I had fun doing that with my box o' crayons.
+
+- I should add more logic to the winning state. Right now the player can 
+    win at any time during the game that includes in the Main Menu and on the
+    Pause screen. I would accidentally "Win" causing a deadlock in the game
+    which I would have to restart the game to stop.
+
+**[Positive Note]**
+- I feel happy about being so close to rapid prototyping status. Looking back
+    it does feel like it was a road to get here, but now that I can. I feel 
+    more focused on designing new levels.
+    
+**[Next Goal]Add a new level to the game...**

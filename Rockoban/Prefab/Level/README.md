@@ -18,6 +18,7 @@ Tile types are:
     START           = 7
     RESTART         = 8
     OPTIONS         = 9
+    QUESTS          = 10
 
 Colors are:
     gray = Color( 0.75, 0.75, 0.75, 1 )
