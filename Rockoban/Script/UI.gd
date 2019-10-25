@@ -100,7 +100,8 @@ func onGoToMainMenu():
 ################################################################################
 #warning-ignore:unused_argument
 func onGoToLevel(level):
-	$Panel.hide()
+	if !GlobalEvents.isWinner:
+		$Panel.hide()
 
 ################################################################################
 #@brief

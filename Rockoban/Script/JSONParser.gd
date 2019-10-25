@@ -33,11 +33,17 @@ func _ready():
 ################################################################################
 func LoadJSON(json):
 	var file = File.new()
-	file.open(json, File.READ)
-	var LevelJSON = parse_json(file.get_as_text())
-	if LevelJSON.empty():
+	var LevelJSON
+	if file.file_exists(json):
+		file.open(json, File.READ)
+		LevelJSON = parse_json(file.get_as_text())
+		if typeof(LevelJSON) != TYPE_DICTIONARY or LevelJSON.empty():
+			print("Unable to read JSON file: " + json)
+			print("JSON: " + json + " was empty or not in dictionary format.")
+		file.close()
+	else:
 		print("Unable to read JSON file: " + json)
-	file.close()
+		print("JSON: "+ json + " does not exist.")
 	return LevelJSON
 
 ################################################################################
@@ -67,10 +73,19 @@ func SaveJSON(level):
 ################################################################################
 func CreateLevelFromJSON(filepath):
 	var LevelJSON = LoadJSON(filepath)
+
+	if typeof(LevelJSON) != TYPE_DICTIONARY:
+		return null
+
 	var TileArray = []
+	var instance
 	for tile in LevelJSON:
-		var instance = load(LevelJSON[tile]["path"]).instance()
-		instance.position = Vector2.ZERO
+		if LevelJSON[tile].has("level"):
+			TileArray = CreateLevelFromJSON(LevelJSON[tile]["level"])
+
+		if LevelJSON[tile].has("path"):
+			instance = load(LevelJSON[tile]["path"]).instance()
+			instance.position = Vector2.ZERO
 
 		if LevelJSON[tile].has("name"):
 			instance.name = LevelJSON[tile]["name"]
@@ -91,12 +106,14 @@ func CreateLevelFromJSON(filepath):
 		if LevelJSON[tile].has("offsetX"):
 			instance.Offset.x += LevelJSON[tile]["offsetX"]
 		else:
-			instance.Offset.x += 32
+			if instance:
+				instance.Offset.x += 32
 
 		if LevelJSON[tile].has("offsetY"):
 			instance.Offset.y += LevelJSON[tile]["offsetY"]
 		else:
-			instance.Offset.y += 32
-
-		TileArray.append(instance)
+			if instance:
+				instance.Offset.y += 32
+		if instance:
+			TileArray.append(instance)
 	return TileArray

@@ -49,8 +49,12 @@ func onGoToLevel(level):
 
 	#Load the specified level
 	var tiles = $JSONParser.CreateLevelFromJSON("res://Prefab/Level/Level00" + String(level) + ".json")
-	for tile in tiles:
-		$Grid.AddPawn(tile, Vector2(tile.GridPosition.x, tile.GridPosition.y), tile.Offset)
+
+	if tiles:
+		for tile in tiles:
+			$Grid.AddPawn(tile, Vector2(tile.GridPosition.x, tile.GridPosition.y), tile.Offset)
+	else:
+		GlobalEvents.emit_signal("YouWin")
 
 ################################################################################
 #@brief

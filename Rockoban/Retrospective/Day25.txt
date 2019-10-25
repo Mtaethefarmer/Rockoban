@@ -1,0 +1,18 @@
+**Day 025[GREAT]**
+
+**Goal: Add a new level to the game[Complete]**
+
+Seamless level transitions! With the added affect of base levels that I can
+use to create many other variant levels. 
+
+**[Improvements]**
+- I should improve the JSON Parser to read multiple JSON files instead of only
+    one level deep. I could use that feature to combine many sub-levels into
+    one. There is a function that will assist this process on the Godot forums:
+    ~ https://godotengine.org/qa/8024/update-dictionary-method
+    
+**[Positive Note]**
+- I feel great about getting 12 prototypes designed. It feels like a lot of 
+    progress for an hour and I am going to have fun playing them in the game.
+    
+**[Next Goal]Implement a Level Select menu...**

@@ -142,7 +142,9 @@ func RequestMove(pawn, direction):
 			if pawn.Type == GlobalEvents.TileType.PLAYER:
 				if not GlobalEvents.isWinner:
 					Clear()
-				GlobalEvents.emit_signal("YouWin")
+					GlobalEvents.CurrentLevel += 1
+					GlobalEvents.emit_signal("GoToLevel", GlobalEvents.CurrentLevel)
+				#GlobalEvents.emit_signal("YouWin")
 		GlobalEvents.TileType.CRATE:
 			if pawn.Type == GlobalEvents.TileType.CRATE:
 				continue

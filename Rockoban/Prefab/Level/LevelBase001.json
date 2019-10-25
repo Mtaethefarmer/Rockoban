@@ -1,0 +1,422 @@
+{
+    "Tile1": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 1,
+        "Y": 1
+    },
+    "Tile2": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 2,
+        "Y": 1
+    },
+    "Tile3": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 3,
+        "Y": 1
+    },
+    "Tile4": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 4,
+        "Y": 1
+    },
+    "Tile5": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 5,
+        "Y": 1
+    },
+    "Tile6": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 6,
+        "Y": 1
+    },
+    "Tile7": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 7,
+        "Y": 1
+    },
+    "Tile8": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 8,
+        "Y": 1
+    },
+    "Tile9": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 9,
+        "Y": 1
+    },
+    "Tile10": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 10,
+        "Y": 1
+    },
+    "Tile11": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 11,
+        "Y": 1
+    },
+    "Tile12": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 12,
+        "Y": 1
+    },
+    "Tile13": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 13,
+        "Y": 1
+    },
+    "Tile14": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 14,
+        "Y": 1
+    },
+    "Tile15": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 1,
+        "Y": 2
+    },
+    "Tile16": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 2,
+        "Y": 2
+    },
+    "Tile17": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 3,
+        "Y": 2
+    },
+    "Tile18": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 12,
+        "Y": 2
+    },
+    "Tile19": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 13,
+        "Y": 2
+    },
+    "Tile20": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 14,
+        "Y": 2
+    },
+    "Tile21": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 1,
+        "Y": 3
+    },
+    "Tile22": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 2,
+        "Y": 3
+    },
+    "Tile23": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 3,
+        "Y": 3
+    },
+    "Tile24": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 12,
+        "Y": 3
+    },
+    "Tile25": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 13,
+        "Y": 3
+    },
+    "Tile26": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 14,
+        "Y": 3
+    },
+    "Tile27": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 1,
+        "Y": 4
+    },
+    "Tile28": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 2,
+        "Y": 4
+    },
+    "Tile29": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 3,
+        "Y": 4
+    },
+    "Tile30": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 12,
+        "Y": 4
+    },
+    "Tile31": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 13,
+        "Y": 4
+    },
+    "Tile32": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 14,
+        "Y": 4
+    },
+    "Tile33": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 7,
+        "Y": 4
+    },
+    "Tile34": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 8,
+        "Y": 4
+    },
+    "Tile35": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 1,
+        "Y": 6
+    },
+    "Tile36": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 2,
+        "Y": 6
+    },
+    "Tile37": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 3,
+        "Y": 6
+    },
+    "Tile38": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 12,
+        "Y": 6
+    },
+    "Tile39": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 13,
+        "Y": 6
+    },
+    "Tile40": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 14,
+        "Y": 6
+    },
+    "Tile41": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 1,
+        "Y": 5
+    },
+    "Tile42": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 2,
+        "Y": 5
+    },
+    "Tile43": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 3,
+        "Y": 5
+    },
+    "Tile44": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 12,
+        "Y": 5
+    },
+    "Tile45": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 13,
+        "Y": 5
+    },
+    "Tile46": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 14,
+        "Y": 5
+    },
+    "Tile47": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 1,
+        "Y": 7
+    },
+    "Tile48": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 2,
+        "Y": 7
+    },
+    "Tile49": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 3,
+        "Y": 7
+    },
+    "Tile50": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 4,
+        "Y": 7
+    },
+    "Tile51": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 5,
+        "Y": 7
+    },
+    "Tile52": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 6,
+        "Y": 7
+    },
+    "Tile53": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 7,
+        "Y": 7
+    },
+    "Tile54": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 8,
+        "Y": 7
+    },
+    "Tile55": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 9,
+        "Y": 7
+    },
+    "Tile56": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 10,
+        "Y": 7
+    },
+    "Tile57": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 11,
+        "Y": 7
+    },
+    "Tile58": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 12,
+        "Y": 7
+    },
+    "Tile59": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 13,
+        "Y": 7
+    },
+    "Tile60": {
+        "name": "WALL1",
+        "path": "res://Prefab/Object/Wall.tscn",
+        "type": 0,
+        "X": 14,
+        "Y": 7
+    }
+}
