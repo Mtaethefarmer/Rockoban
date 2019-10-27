@@ -7,6 +7,8 @@ image: /thumbnail-mobile.png
 author: "Devone Reynolds"
 ---
 
-# Game Over
+The markdown template I use for all of my blogs
 
+# Game Over
 Just some filler text for now.
+
