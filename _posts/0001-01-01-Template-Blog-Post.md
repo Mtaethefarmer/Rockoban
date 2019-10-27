@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ""
+title: "Template Blog Post"
 tagline: ""
 image: 
 author: "Devone Reynolds"
