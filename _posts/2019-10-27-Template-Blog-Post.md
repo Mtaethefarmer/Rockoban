@@ -9,6 +9,6 @@ author: "Devone Reynolds"
 
 The markdown template I use for all of my blogs
 
-# Game Over
+# [](#header-1)Game Over
 Just some filler text for now.
 
