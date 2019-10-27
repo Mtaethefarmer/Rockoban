@@ -28,4 +28,4 @@ twitter_username: gamedevone1
 github_username:  mtaethefarmer
 
 # Build settings
-theme: jekyll-theme-cayman
+theme: minima
