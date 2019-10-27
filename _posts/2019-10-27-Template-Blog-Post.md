@@ -11,5 +11,4 @@ The markdown template I use for all of my blogs
 
 ## Game Over
 Just some filler text for now.
-
-<h2><b><span style="color:gold">Summary</span></b></h2>
+## Summary
