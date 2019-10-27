@@ -80,8 +80,8 @@ func CreateLevelFromJSON(filepath):
 	var TileArray = []
 	var instance
 	for tile in LevelJSON:
-		if LevelJSON[tile].has("level"):
-			TileArray = CreateLevelFromJSON(LevelJSON[tile]["level"])
+		if LevelJSON[tile].has("levelPath"):
+			TileArray = CreateLevelFromJSON(LevelJSON[tile]["levelPath"])
 
 		if LevelJSON[tile].has("path"):
 			instance = load(LevelJSON[tile]["path"]).instance()
@@ -102,6 +102,14 @@ func CreateLevelFromJSON(filepath):
 
 		if LevelJSON[tile].has("color"):
 			instance.modulate = ColorN(LevelJSON[tile]["color"])
+			if instance.get("ButtonColor"):
+				instance.ButtonColor = LevelJSON[tile]["color"]
+
+		if LevelJSON[tile].has("level"):
+			instance.Level = LevelJSON[tile]["level"]
+
+		if LevelJSON[tile].has("fontSize"):
+			instance.FontSize = LevelJSON[tile]["fontSize"]
 
 		if LevelJSON[tile].has("offsetX"):
 			instance.Offset.x += LevelJSON[tile]["offsetX"]

@@ -33,7 +33,7 @@ func _ready():
 #warning-ignore:unused_argument
 func _process(delta):
 	#Debug active tiles on the grid
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("debug_grid"):
 		Print()
 
 ################################################################################
@@ -41,10 +41,23 @@ func _process(delta):
 #		Prints all active tiles on the grid
 ################################################################################
 func Print():
+	print("---GRID STATUS---")
+	for y in range(GRID_MAX_Y):
+		var col = []
+		for x in range(GRID_MAX_X):
+			col.append(get_cellv(Vector2(x,y)))
+		print(col)
+
+
 	for x in range(GRID_MAX_X):
-			for y in range(GRID_MAX_Y):
-				if get_cellv(Vector2(x,y)) != GlobalEvents.TileType.OPEN and get_cellv(Vector2(x,y)) != GlobalEvents.TileType.WALL:
-					print("Tile: " + String(get_cellv(Vector2(x,y))) + " @ {" + String(x) + ", " +String(y) + "}")
+		for y in range(GRID_MAX_Y):
+			if get_cellv(Vector2(x,y)) != GlobalEvents.TileType.OPEN:
+
+				if GetPawn(Vector2(x,y)):
+					print("Tile: " + GetPawn(Vector2(x,y)).name)
+					print("Type: " + String(get_cellv(Vector2(x,y))))
+					print("Position: {" + String(x) + ", " +String(y) + "}")
+					print("---")
 
 ################################################################################
 #@brief
@@ -131,6 +144,14 @@ func RequestMove(pawn, direction):
 			GlobalEvents.emit_signal("Pause")
 		GlobalEvents.TileType.LEVEL_SELECT:
 			print("Player has chosen to select another level...")
+			Clear()
+			GlobalEvents.emit_signal("GoToLevel", -2)
+		GlobalEvents.TileType.LEVEL:
+			print("Player has selected a level...")
+			var tile = GetPawn(target)
+			if tile:
+				Clear()
+				GlobalEvents.emit_signal("GoToLevel", tile.Level)
 		GlobalEvents.TileType.START:
 			print("Player has chosen to start the game...")
 			Clear()
@@ -140,10 +161,11 @@ func RequestMove(pawn, direction):
 			GlobalEvents.emit_signal("GoToLevel", 0)
 		GlobalEvents.TileType.PLAYER:
 			if pawn.Type == GlobalEvents.TileType.PLAYER:
-				if not GlobalEvents.isWinner:
-					Clear()
-					GlobalEvents.CurrentLevel += 1
-					GlobalEvents.emit_signal("GoToLevel", GlobalEvents.CurrentLevel)
+				if GlobalEvents.isOnLevel():
+					if not GlobalEvents.isWinner:
+						Clear()
+						GlobalEvents.CurrentLevel += 1
+						GlobalEvents.emit_signal("GoToLevel", GlobalEvents.CurrentLevel)
 				#GlobalEvents.emit_signal("YouWin")
 		GlobalEvents.TileType.CRATE:
 			if pawn.Type == GlobalEvents.TileType.CRATE:

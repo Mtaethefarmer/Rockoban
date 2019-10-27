@@ -54,10 +54,16 @@ enum TileType{	PLAYER = -2 ,
 				START,
 				RESTART,
 				OPTIONS,
-				QUESTS
+				QUESTS,
+				LEVEL
 				}
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
+
+#Return true if players are currently on  a level
+#@note All menus negitive values
+func isOnLevel():
+	return CurrentLevel < 0

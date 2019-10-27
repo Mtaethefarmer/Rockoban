@@ -1,7 +1,7 @@
 {
     "base":
     {
-        "level" : "res://Prefab/Level/LevelBase001.json"
+        "levelPath" : "res://Prefab/Level/LevelBase001.json"
     },
     "Player1": {
         "name": "Player1",

@@ -36,6 +36,7 @@ func _ready():
 #		All pawn data as a dictionary
 #@note By default all pawns will save their name, scene path, position and
 #		thier tile type
+#@note Check for valid parameters, not all Pawns have the same info
 ################################################################################
 func Save():
 	var save_data={
