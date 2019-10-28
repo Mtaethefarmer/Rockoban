@@ -1,0 +1,22 @@
+DAY 4[Bad]
+
+Goal: Grid-based movement [Incomplete]
+
+I struggled to get started with Grid-based movement. I think it was due to my
+ lack of preparation and overall knowledge of how I wanted to implement it.
+
+[Improvements]
+- If I setup my streaming/social media networks the day prior I can cut down on
+    my setup time.
+- I did watch a video on Grid-based movement 45 minutes prior to streaming but
+    I had no notes or psuedo-code to reference while developing which made me 
+    feel lost in what to do next.
+- I should treat the 1-hour time limit with more respect. One of my teammates 
+    distracted me for a few minutes with our school project. I will let them 
+    know later that I am unavaible during that time. Still love all the hard
+    work they do.
+
+[Positive Note]
+- Made a new friend on Twitch, Wraithan,while streaming. YAY!
+
+[Next Goal]Grid-based movement...

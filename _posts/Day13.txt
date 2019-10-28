@@ -1,0 +1,31 @@
+**Day 013[GOOD]**
+
+**Goal: Have Players go to the Main Menu[Complete]**
+
+Anytime the player wants to go back to the main menu they can step on the 
+Main Menu Tiles, to send them back. Also, the types of tiles have been 
+upgraded to global types.
+
+**[Improvements]**
+- I should figure out why Godot is hanging until I open the terminal window.
+    It continues to take up a few minutes at a time and interrupts my thought
+    process. Grrr... so frustrating!
+
+- If I am going to stream in the new location I need to find a way to have the
+    chat screen somewhere I can see it update somewhere I can see it. This time
+    I had to constantly turn my phone on and unlock it to see what was going 
+    on.
+
+- I want to make sure the terminology that I use for the comments in the game 
+    stay consistent so I will log some of them here for future reference:
+    ~ Grid Position = location in grid coordinates 
+    ~ Tile          = any object that can be placed on the grid
+    
+**[Positive Note]**
+- My brother came to say hi on stream and watched until I was done. This is a 
+    victory for me because we have not spoken for some time.
+
+- The new location has really good lighting and I plan to stream from there for
+    now on. I really liked how clear I could see myself while streaming.
+    
+**[Next Goal]Load Level One...**

@@ -1,0 +1,23 @@
+Day 005[Good]
+
+Goal: Grid-based movement [Incomplete]
+
+I was able to get the player to request to move from the Grid. This method
+centralizes where I resolve movement for every object on the board decreasing
+places I have to search for logic. 
+
+[Improvements]
+- Getting working code is good but I am left at the end to comment my code. 
+    Commenting my thoughts and copying from the Stub file I made should be
+    doable. 
+
+[Positive Note]
+- Taking the time to write down psuedo-code for the Grid made me feel much
+    more comfortable coding and streaming at the same time. I could refer 
+    to the psuedo-code when I got lost or sidetracked.
+- Some of my friends and family came by to say hi, made me feel supported
+    and not alone. Thanks, fam!
+- I felt good to be ready and streaming 5 minutes prior to my initial 
+    start-time, I even had a second controller ready.
+
+[Next Goal]Grid-based movement...
