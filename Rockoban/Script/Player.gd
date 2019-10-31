@@ -33,6 +33,10 @@ func _ready():
 	if(err):
 		print(name + " encountered error code: " + String(err))
 
+	err = GlobalEvents.connect("UIButtonSelected",self, "onUIButtonSelected")
+	if(err):
+		print(name + " encountered error code: " + String(err))
+
 #warning-ignore:unused_argument
 func _input(event):
 	var d = GetInput(event)
@@ -162,3 +166,10 @@ func Save():
 		"color": color
 		}
 	return save_data
+
+
+func onUIButtonSelected():
+	set_process(false)
+	$AnimationPlayer.play("teleport_up")
+	yield($AnimationPlayer, "animation_finished")
+	set_process(true)

@@ -22,23 +22,16 @@ extends Node
 #		Singleton class used for all global events
 #
 ################################################################################
-#warning-ignore:unused_signal
 signal PlayerControllerConnected(id)
-#warning-ignore:unused_signal
 signal PlayerControllerDisconneted(id)
-#warning-ignore:unused_signal
 signal YouWin()
-#warning-ignore:unused_signal
 signal GoToMainMenu()
-#warning-ignore:unused_signal
 signal GoToLevel(level)
-#warning-ignore:unused_signal
 signal Pause()
-#warning-ignore:unused_class_variable
+signal UIButtonSelected()
+
 var isPaused = false
-#warning-ignore:unused_class_variable
 var isWinner = false
-#warning-ignore:unused_class_variable
 var CurrentLevel = 0
 
 
@@ -63,7 +56,13 @@ enum TileType{	PLAYER = -2 ,
 func _ready():
 	pass # Replace with function body.
 
-#Return true if players are currently on  a level
-#@note All menus negitive values
+################################################################################
+#@brief
+#		Returns if players are currently on a level
+#@note
+#		All menus are negative values
+#@return
+#		Return true if players are currently on a level otherwise returns false
+################################################################################
 func isOnLevel():
-	return CurrentLevel < 0
+	return CurrentLevel > 0

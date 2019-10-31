@@ -23,6 +23,13 @@ config/icon="res://Asset/Art/icon.png"
 
 GlobalEvents="*res://Script/GlobalEvents.gd"
 
+[debug]
+
+gdscript/warnings/unused_variable=false
+gdscript/warnings/unused_class_variable=false
+gdscript/warnings/unused_argument=false
+gdscript/warnings/unused_signal=false
+
 [display]
 
 window/size/height=576

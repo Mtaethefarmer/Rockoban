@@ -22,6 +22,7 @@ extends TileMap
 
 const GRID_MAX_X = 15
 const GRID_MAX_Y = 8
+var function_state
 ################################################################################
 #@class	Grid
 #@brief
@@ -135,8 +136,24 @@ func RequestMove(pawn, direction):
 
 	match get_cellv(target):
 		GlobalEvents.TileType.RESTART:
-			Clear()
-			GlobalEvents.emit_signal("GoToLevel", GlobalEvents.CurrentLevel)
+			#Check if there are players
+				#If yes:
+					#Clear grid
+					#Connect to animation finished signal on players
+					#emit UIButtonSelected signal
+					#yield for animation fished signal
+					#emit signal GoToLevel signal
+			var PlayerOne = get_child(0)
+			var PlayerTwo = get_child(1)
+			if PlayerOne and PlayerTwo:
+				if PlayerOne.Type == GlobalEvents.TileType.PLAYER and PlayerTwo.Type == GlobalEvents.TileType.PLAYER:
+					Clear()
+					#connect("animation_finished", PlayerTwo.get_node("AnimationPlayer"), "onPlayerAnimationFinished")
+					GlobalEvents.emit_signal("UIButtonSelected")
+					yield(PlayerOne.get_node("AnimationPlayer"), "animation_finished")
+					yield(PlayerTwo.get_node("AnimationPlayer"), "animation_finished")
+					GlobalEvents.emit_signal("GoToLevel", GlobalEvents.CurrentLevel)
+
 		GlobalEvents.TileType.OPEN:
 			return UpdatePawnPosition(pawn, start, target)
 		GlobalEvents.TileType.CONTINUE:
@@ -161,6 +178,9 @@ func RequestMove(pawn, direction):
 			GlobalEvents.emit_signal("GoToLevel", 0)
 		GlobalEvents.TileType.PLAYER:
 			if pawn.Type == GlobalEvents.TileType.PLAYER:
+
+				print("Player is on level: " + String(GlobalEvents.CurrentLevel))
+				print("Player is on level?:  " + String(GlobalEvents.isOnLevel()))
 				if GlobalEvents.isOnLevel():
 					if not GlobalEvents.isWinner:
 						Clear()
@@ -243,3 +263,5 @@ func AddPawn(pawn, gridPosition, offset = Vector2.ZERO):
 		print("Could not place Pawn: [" + pawn.name + "] @ GridPos: " + String(gridPosition))
 		print("~Tile " + GetPawn(gridPosition).name + " with type: " + String(GetPawn(gridPosition).Type) + " is blocking.")
 
+func onPlayerAnimationFinished():
+	function_state.resume()

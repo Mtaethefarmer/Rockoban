@@ -1,0 +1,79 @@
+{
+    "base": {
+        "levelPath": "res://Prefab/Level/LevelBase001.json"
+    },
+    "Player1": {
+        "name": "Player1",
+        "path": "res://Prefab/Player/Player.tscn",
+        "type": -2,
+        "X": 9,
+        "Y": 4,
+        "id": 1,
+        "color": "green"
+    },
+    "Player2": {
+        "name": "Player2",
+        "path": "res://Prefab/Player/Player.tscn",
+        "type": -2,
+        "X": 6,
+        "Y": 4,
+        "id": 2,
+        "color": "orange"
+    },
+    "Tile1": {
+        "name": "CRATE1",
+        "path": "res://Prefab/Object/Crate.tscn",
+        "type": 1,
+        "X": 7,
+        "Y": 2
+    },
+    "Tile2": {
+        "name": "CRATE2",
+        "path": "res://Prefab/Object/Crate.tscn",
+        "type": 1,
+        "X": 9,
+        "Y": 2
+    },
+    "Tile3": {
+        "name": "CRATE3",
+        "path": "res://Prefab/Object/Crate.tscn",
+        "type": 1,
+        "X": 7,
+        "Y": 3
+    },
+    "Tile4": {
+        "name": "CRATE4",
+        "path": "res://Prefab/Object/Crate.tscn",
+        "type": 1,
+        "X": 9,
+        "Y": 3
+    },
+    "Tile5": {
+        "name": "CRATE5",
+        "path": "res://Prefab/Object/Crate.tscn",
+        "type": 1,
+        "X": 6,
+        "Y": 5
+    },
+    "Tile6": {
+        "name": "CRATE6",
+        "path": "res://Prefab/Object/Crate.tscn",
+        "type": 1,
+        "X": 8,
+        "Y": 5
+    },
+    "Tile7": {
+        "name": "CRATE7",
+        "path": "res://Prefab/Object/Crate.tscn",
+        "type": 1,
+        "X": 6,
+        "Y": 6
+    },
+    "Tile8": {
+        "name": "CRATE8",
+        "path": "res://Prefab/Object/Crate.tscn",
+        "type": 1,
+        "X": 8,
+        "Y": 6
+    }
+}
