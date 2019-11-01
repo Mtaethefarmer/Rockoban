@@ -46,19 +46,13 @@ func _input(event):
 
 	var newPosition = get_parent().RequestMove(self, d)
 
-	if newPosition && newPosition != position:
-		set_process(false)
-#		if(Id == PlayerID.ONE):
-#			audioName = "res://Asset/Audio/UI/click1.ogg"
-#		$AudioStreamPlayer.stream = audioName
+	if newPosition is Vector2 && newPosition != position:
 		$AudioStreamPlayer.play()
-		$AnimationPlayer.play(animationName)
+		$AnimationPlayer.queue(animationName)
 		$Tween.interpolate_property(self, "Sprite.position", -direction * 32, Vector2(), $AnimationPlayer.current_animation_length,Tween.TRANS_LINEAR,Tween.EASE_IN)
 		$Tween.start()
 		position = newPosition
-
 		yield($AnimationPlayer, "animation_finished")
-		set_process(true)
 	else:
 		$AnimationPlayer.play("bump")
 
@@ -167,9 +161,8 @@ func Save():
 		}
 	return save_data
 
-
 func onUIButtonSelected():
-	set_process(false)
+	if $AnimationPlayer.is_playing():
+		yield($AnimationPlayer, "animation_finished")
 	$AnimationPlayer.play("teleport_up")
 	yield($AnimationPlayer, "animation_finished")
-	set_process(true)

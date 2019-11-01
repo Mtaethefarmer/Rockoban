@@ -22,7 +22,6 @@ extends TileMap
 
 const GRID_MAX_X = 15
 const GRID_MAX_Y = 8
-var function_state
 ################################################################################
 #@class	Grid
 #@brief
@@ -136,28 +135,22 @@ func RequestMove(pawn, direction):
 
 	match get_cellv(target):
 		GlobalEvents.TileType.RESTART:
-			#Check if there are players
-				#If yes:
-					#Clear grid
-					#Connect to animation finished signal on players
-					#emit UIButtonSelected signal
-					#yield for animation fished signal
-					#emit signal GoToLevel signal
-			var PlayerOne = get_child(0)
-			var PlayerTwo = get_child(1)
-			if PlayerOne and PlayerTwo:
-				if PlayerOne.Type == GlobalEvents.TileType.PLAYER and PlayerTwo.Type == GlobalEvents.TileType.PLAYER:
-					Clear()
-					#connect("animation_finished", PlayerTwo.get_node("AnimationPlayer"), "onPlayerAnimationFinished")
-					GlobalEvents.emit_signal("UIButtonSelected")
-					yield(PlayerOne.get_node("AnimationPlayer"), "animation_finished")
-					yield(PlayerTwo.get_node("AnimationPlayer"), "animation_finished")
-					GlobalEvents.emit_signal("GoToLevel", GlobalEvents.CurrentLevel)
-
+			GlobalEvents.emit_signal("UIButtonSelected")
+			var one = get_node("Player1/AnimationPlayer")
+			var two = get_node("Player2/AnimationPlayer")
+			yield(one, "animation_finished")
+			yield(two, "animation_finished")
+			Clear()
+			GlobalEvents.emit_signal("GoToLevel", GlobalEvents.CurrentLevel)
 		GlobalEvents.TileType.OPEN:
 			return UpdatePawnPosition(pawn, start, target)
 		GlobalEvents.TileType.CONTINUE:
 			print("Player has chosen to continue...")
+			GlobalEvents.emit_signal("UIButtonSelected")
+			var one = get_node("Player1/AnimationPlayer")
+			var two = get_node("Player2/AnimationPlayer")
+			yield(one, "animation_finished")
+			yield(two, "animation_finished")
 			GlobalEvents.emit_signal("Pause")
 		GlobalEvents.TileType.LEVEL_SELECT:
 			print("Player has chosen to select another level...")
@@ -263,5 +256,25 @@ func AddPawn(pawn, gridPosition, offset = Vector2.ZERO):
 		print("Could not place Pawn: [" + pawn.name + "] @ GridPos: " + String(gridPosition))
 		print("~Tile " + GetPawn(gridPosition).name + " with type: " + String(GetPawn(gridPosition).Type) + " is blocking.")
 
-func onPlayerAnimationFinished():
-	function_state.resume()
+################################################################################
+#@brief
+#		Halts the Grid process until node emits signal
+#@param node_path
+#		Abs or relavtive path to the node
+#@param signal_name
+#		Name of the signal to wait for
+#@note
+#		Currently does not work as intended. Function does not yield and returns
+#		immediately
+#@return
+#		True if successfully yielded on pawn's signal otherwise returns false
+################################################################################
+func WaitForPawn(node_path, signal_name):
+	var node = get_node(node_path)
+	if node:
+		print("Waiting for <" + node_path + "> and signal " + signal_name)
+		yield(node, signal_name)
+		return true
+	else:
+		print("Failed to wait for <" + node_path + "> and signal " + signal_name)
+		return false
