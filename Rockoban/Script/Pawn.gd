@@ -14,11 +14,8 @@ extends Node2D
 #				be changed the editor
 #
 ################################################################################
-#warning-ignore:unused_class_variable
 export(GlobalEvents.TileType) var Type = GlobalEvents.TileType.OPEN
-#warning-ignore:unused_class_variable
 var GridPosition = Vector2()
-#warning-ignore:unused_class_variable
 var Offset = Vector2()
 ################################################################################
 #@class	Pawn

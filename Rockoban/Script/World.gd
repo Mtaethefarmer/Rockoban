@@ -20,6 +20,9 @@ extends Node
 #
 ################################################################################
 func _ready():
+	#Seed random number gen
+	randomize()
+
 	#Connect signals to the instance of the crate
 	var err = GlobalEvents.connect("GoToLevel", self, "onGoToLevel")
 	if(err):

@@ -166,3 +166,4 @@ func onUIButtonSelected():
 		yield($AnimationPlayer, "animation_finished")
 	$AnimationPlayer.play("teleport_up")
 	yield($AnimationPlayer, "animation_finished")
+	pass

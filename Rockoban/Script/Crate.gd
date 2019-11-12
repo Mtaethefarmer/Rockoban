@@ -13,11 +13,9 @@ extends "Pawn.gd"
 #		Discussion:
 #
 ################################################################################
-
-#warning-ignore:unused_signal
 signal CrateMove(dir)
-#warning-ignore:unused_signal
 signal CrateSink(hole)
+var RandAnimDir = Vector2()
 
 ################################################################################
 #@class	Crate
@@ -48,7 +46,6 @@ func onMoveTheCrate(dir):
 	#If the crate can move, set its new position
 	if newPosition:
 		position = newPosition
-
 ################################################################################
 #@brief
 #		Lets the game know that ca crate has sunk and needs to be removed
@@ -57,3 +54,30 @@ func onSinkTheCrate(hole):
 	hole.emit_signal("CrateOnHole")
 	#print( name + " sank into the hole.")
 	get_parent().RemovePawn(self)
+
+func CreateRandDir():
+	var dir = randi() % 4
+
+	match(dir):
+		0:
+			RandAnimDir = Vector2.UP
+		1:
+			RandAnimDir = Vector2.DOWN
+		2:
+			RandAnimDir = Vector2.LEFT
+		3:
+			RandAnimDir = Vector2.RIGHT
+		_:
+			print("Invalid random animation direction selected for: " + name)
+
+func SpawnCrate():
+	# Choose a random location on Path2D.
+	#$Path2D/SpawnLocation.set_offset(randi())
+	# Set the texture position to a random location.
+	#$Texture.position = $Path2D/SpawnLocation.position
+	# Tween back to origin
+	#var tween = Tween.new()
+	#tween.interpolate_prop(...)
+	#$Texture.position = Vector.ZERO
+	#emit signal ready_to_play!
+	pass
